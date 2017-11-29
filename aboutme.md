@@ -30,8 +30,7 @@ excellently on a range of analytic tasks and project management, and was
 promoted to Senior Associate in charge of the quant modeling team.
 
 Mariner Investment Group – Consulting Extern         
-Providence, RI & New York, NY | September 2014 – January
-2015
+Providence, RI & New York, NY | September 2014 – January 2015
 
 - Conducted risk
 analysis for socially responsible investments to determine the viability of
