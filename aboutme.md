@@ -30,6 +30,7 @@ excellently on a range of analytic tasks and project management, and was
 promoted to Senior Associate in charge of the quant modeling team.
 
 Mariner Investment Group – Consulting Extern         
+
 Providence, RI & New York, NY | September 2014 – January 2015
 
 - Conducted risk
@@ -38,6 +39,7 @@ social impact funds & presented findings to firm executives. Ultimately,
 recommended volatility bets on low-scoring ESG assets.
 
 Providence Financial – Wealth Management Intern 
+
 Providence, RI | September 2014 – January 2015
 
 - Researched funds,
@@ -48,7 +50,9 @@ on-brand marketing materials for new clients, focusing on local professionals.
 
 Brown University – Bachelor of Arts in Business Economics,
 Entrepreneurship and Organizational Studies (BEO)
+
 Providence, RI | May 2015
+
 Major GPA: 4.0; Cumulative GPA: 3.8; GMAT 770; ACT 35
 
 - President of
