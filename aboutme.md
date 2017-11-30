@@ -40,6 +40,7 @@ Major GPA: 4.0; Cumulative GPA: 3.8; GMAT 770; ACT 35
 
 ### ADDITIONAL SKILLS AND EXPERIENCE
 
+
 - Programming/Query Languages: VBA, MATLAB, C, SQL  
 - Language Fluency: English, Spanish  
 - Other Extracurricular: 3x medalist in Brazilian Jujitsu
