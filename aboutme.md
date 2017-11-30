@@ -36,9 +36,8 @@ Major GPA: 4.0; Cumulative GPA: 3.8; GMAT 770; ACT 35
 - President of Toastmasters public speaking club: held a TEDx event that garnered 40+ speaker applicants; improved club membership by 150%; delivered speeches and mentored other club members.  
 - VP of Brown Entrepreneurship Program: designed and held innovation workshops, brought in guest speakers.
 
-### ADDITIONAL SKILLS AND EXPERIENCE
-
-
+### ADDITIONAL SKILLS AND EXPERIENCE  
+  
 - Programming/Query Languages: VBA, MATLAB, C, SQL  
 - Language Fluency: English, Spanish  
 - Other Extracurricular: 3x medalist in Brazilian Jujitsu
