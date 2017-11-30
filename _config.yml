@@ -23,7 +23,7 @@ description: Content incoming
 
 # List of links in the navigation bar
 navbar-links:
-  Resume: "aboutme"
+  Resume: "resume"
   Resources:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
