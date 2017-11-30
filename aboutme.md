@@ -6,8 +6,7 @@ subtitle:
 ### WORK EXPERIENCE
 
 **Cambridge Associates – Senior Investment Associate, Quantitative Modeling Team Leader**  
-Boston, MA | July 2015 – Present
-
+Boston, MA | July 2015 – Present  
 - Direct team of 40 across 6 offices to fulfill quantitative roles: spearheaded construction of 7 manager and client analytics packages, co-designed quant training program and trained 30 associates. Additionally, solve computational problems directed to us by team leads.  
 - Oversaw team of 5 to build a manager performance analysis model using VBA/Excel, in order to automate the tracking of key metrics to inform portfolio construction. Became the most used model across Cambridge’s 100+ Investment Associates. Increased scope of available performance analytics by 180%.  
 - Provide investment
@@ -22,8 +21,7 @@ plans to address them.
 - Performed excellently on a range of analytic tasks and project management, and was promoted to Senior Associate in charge of the quant modeling team.
 
 **Mariner Investment Group – Consulting Extern**  
-Providence, RI & New York, NY | September 2014 – January 2015
-
+Providence, RI & New York, NY | September 2014 – January 2015  
 - Conducted risk analysis for socially responsible investments to determine the viability of social impact funds & presented findings to firm executives. Ultimately, recommended volatility bets on low-scoring ESG assets.
 
 **Providence Financial – Wealth Management Intern**  
