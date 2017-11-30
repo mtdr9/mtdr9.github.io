@@ -5,7 +5,7 @@ subtitle:
 ---
 ### WORK EXPERIENCE
 
-Cambridge Associates – Senior Investment Associate,
+####Cambridge Associates – Senior Investment Associate,
 Quantitative Modeling Team Leader  
 Boston, MA | July 2015 – Present
 
