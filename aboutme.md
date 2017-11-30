@@ -24,34 +24,24 @@ plans to address them.
 **Mariner Investment Group – Consulting Extern**  
 Providence, RI & New York, NY | September 2014 – January 2015
 
-- Conducted risk
-analysis for socially responsible investments to determine the viability of
-social impact funds & presented findings to firm executives. Ultimately,
-recommended volatility bets on low-scoring ESG assets.
+- Conducted risk analysis for socially responsible investments to determine the viability of social impact funds & presented findings to firm executives. Ultimately, recommended volatility bets on low-scoring ESG assets.
 
 **Providence Financial – Wealth Management Intern**  
 Providence, RI | September 2014 – January 2015  
-- Researched funds,
-tracked account performance, maintained client databases, and constructed
-on-brand marketing materials for new clients, focusing on local professionals.
+- Researched funds, tracked account performance, maintained client databases, and constructed on-brand marketing materials for new clients, focusing on local professionals.
 
 ### EDUCATION
 
 **Brown University – Bachelor of Arts in Business Economics, Entrepreneurship and Organizational Studies (BEO)**  
 Providence, RI | May 2015  
 Major GPA: 4.0; Cumulative GPA: 3.8; GMAT 770; ACT 35  
-- President of
-Toastmasters public speaking club: held a TEDx event that garnered 40+ speaker
-applicants; improved club membership by 150%; delivered speeches and mentored
-other club members.  
-- VP of Brown
-Entrepreneurship Program: designed and held innovation workshops, brought in
-guest speakers.
+- President of Toastmasters public speaking club: held a TEDx event that garnered 40+ speaker applicants; improved club membership by 150%; delivered speeches and mentored other club members.  
+- VP of Brown Entrepreneurship Program: designed and held innovation workshops, brought in guest speakers.
 
 ### ADDITIONAL SKILLS AND EXPERIENCE
 
 - Programming/Query Languages: VBA, MATLAB, C, SQL  
-Language Fluency: English, Spanish  
+- Language Fluency: English, Spanish  
 - Other Extracurricular: 3x medalist in Brazilian Jujitsu
 tournaments, classical pianist, bass guitarist, Eagle Scout, oil painter, Finance
 & standardized testing tutor: classroom & 1-on-1 (2012-2015), former
