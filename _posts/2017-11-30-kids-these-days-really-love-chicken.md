@@ -37,7 +37,7 @@ Chicken is on the rise! Since 1965, meat consumption has been generally increasi
 
 I created this graphs as part of [Makeover Monday](http://www.makeovermonday.co.uk/), in which the blog posts a visualization and the underlying dataset. I was curious to see what consumption looked like for different kinds of meat, as well as just how much chicken and beef had changed. Here is the original graph:
 
-![OriginalBeef](original_meat_graph.png)
+![OriginalBeef](http://mattdorros.com/img/original_meat_graph.png)
 
 
 
