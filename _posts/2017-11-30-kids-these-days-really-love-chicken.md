@@ -4,8 +4,7 @@ title: Kids These Days Really Love Chicken
 image: /img/rotating_beef.jpeg
 tags: [first, post, makeover, monday, poultry, beef, us, consumption]
 ---
-
-Americans love meat, and per capita, we eat more than any other country in the world (our runners-up are Kuwait and Australia<sup>1</sup>). When I think of the american meat industry, I think of beef. But beef is not #trending in the US - since 1976 beef consumption has slowly declined. Here's what it looks like:
+Americans love meat, and per capita, we eat more than any other country in the world. When I think of the american meat industry, I think of beef. But beef is not #trending in the US - since 1976 beef consumption has slowly declined. Here's what it looks like:
 
 
 <!--LINE GRAPHS ON CHANGE IN CHICKEN/BEEF>
@@ -16,7 +15,7 @@ Americans love meat, and per capita, we eat more than any other country in the w
 <!-- this is the embed code provided by Google -->
   <iframe src="https://public.tableau.com/views/ChangeinMeatConsumption/Change?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
 <!-- Google embed ends -->
-</div>
+<!--</div>-->
 
 
 Chicken is on the rise! Since 1965, meat consumption has been generally increasing, and chicken is the main driver behind that growth.
@@ -44,5 +43,6 @@ I created this graphs as part of [Makeover Monday](http://www.makeovermonday.co.
 
 
 Footnotes:
+
 All consumption data from the National Chicken Council
 1. [Source: Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_meat_consumption)
