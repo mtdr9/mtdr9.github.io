@@ -42,7 +42,6 @@ I created this graphs as part of [Makeover Monday](http://www.makeovermonday.co.
 
 
 
-Footnotes:
+Notes:
 
 All consumption data from the National Chicken Council
-1. [Source: Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_meat_consumption)
