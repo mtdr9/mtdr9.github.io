@@ -9,6 +9,11 @@ This is my first post, how exciting!
 
 Attempt at a tableau visualization:
 
+<!-- Poultry Legend -->
+![BarGraphLegend](http://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+
+
+
 <!-- BAR CHARTS ON US MEAT CONSUMPTION -->
 <style>
 .responsive-wrap iframe{ max-width: 100%;}
