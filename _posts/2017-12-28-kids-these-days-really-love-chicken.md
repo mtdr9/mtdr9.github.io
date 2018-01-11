@@ -2,7 +2,7 @@
 layout: post
 title: Kids These Days Really Love Chicken
 image: /img/rotating_beef.jpeg
-tags: [first, post, makeover, monday, poultry, beef, us, consumption]
+tags: [poultry, beef, us, consumption]
 ---
 Americans love meat, and per capita, we eat more than any other country in the world. When I think of the American meat industry, I think of beef. But beef is not #trending in the US - since 1976 beef consumption has slowly declined. Here's what it looks like:
 
