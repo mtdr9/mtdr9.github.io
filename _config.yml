@@ -17,7 +17,7 @@ baseurl: ""
 title: Matt Dorros
 
 # Short description of your site
-description: Content incoming
+description: Matt Dorros
 
 # --- Navigation bar options --- #
 
@@ -25,7 +25,7 @@ description: Content incoming
 navbar-links:
   Resume: "resume"
   Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+    - Cambridge Associates: "https://www.cambridgeassociates.com/"
     - Learn markdown: "http://www.markdowntutorial.com/"
     - GitHub Pages: "https://pages.github.com/"
   Homepage: "http://mattdorros.com"
