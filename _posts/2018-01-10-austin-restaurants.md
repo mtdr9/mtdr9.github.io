@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Health Inspections in Austin Restaurants
-subtitle: & especially failed health inspections
-bigimg: http://mattdorros.com/img/safety_heisenberg.jpeg
+img: /img/safety_heisenberg.jpeg
+tags: [food, safety, austin, texas]
 ---
 
 Have you ever walked by a restaurant in New York with a big orange "C" on the window and wondered why anyone is eating there? Were those people on their phones as they walked in? Are they taking Eating as a pass/fail? Maybe they got sick last week but figure lightning doesn't strike twice.
