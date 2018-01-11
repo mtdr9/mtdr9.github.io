@@ -21,10 +21,6 @@ Americans love meat, and per capita, we eat more than any other country in the w
 Chicken is on the rise! Since 1965, meat consumption has been generally increasing, and chicken is the main driver behind that growth.
 
 
-<!-- Poultry Legend -->
-![BarGraphLegend](http://mattdorros.com/img/legend_poutry.png)
-
-
 <!-- BAR CHARTS ON US MEAT CONSUMPTION -->
 <style>
 .responsive-wrap iframe{ max-width: 100%;}
@@ -34,6 +30,11 @@ Chicken is on the rise! Since 1965, meat consumption has been generally increasi
   <iframe src="https://public.tableau.com/views/USMeatConsumptionbyYear/MeatConsumptionDashboard?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
 <!-- Google embed ends -->
 </div>
+
+
+<!-- Poultry Legend -->
+![BarGraphLegend](http://mattdorros.com/img/legend_poutry.png)
+
 
 I created these graphs as part of [Makeover Monday](http://www.makeovermonday.co.uk/), in which users improve on a visualization and its underlying dataset. I was curious to see how consumption was changing overall, as well as just how much chicken and beef had risen and fallen. Here is the original graph:
 
