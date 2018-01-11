@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Health Inspections in Austin Restaurants
+subtitle: And especially failed health inspections
 image: /img/safety_heisenberg.jpeg
 tags: [food, safety, austin, texas]
 ---
