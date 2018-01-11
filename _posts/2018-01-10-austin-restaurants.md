@@ -11,13 +11,11 @@ When I found out that all of Austin's food inspection data is available, I wante
 
 
 
+<style> .responsive-wrap iframe{ max-width: 100%;} </style>
+<iframe src="https://public.tableau.com/views/AustinRestaurantInspections_3/Dashboard1?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
+
+
 
 If you're curious about a street or neighboorhood in the graph above, try zooming and panning. And if you're walking around downtown, take a quick look before walking into, say, the crawfish shack - or you may not walk out.
-
-
-
-
-
-
 
 
