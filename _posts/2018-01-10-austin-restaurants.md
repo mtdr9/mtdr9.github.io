@@ -16,6 +16,8 @@ When I found out that all of Austin's food inspection data is available, I wante
 <iframe src="https://public.tableau.com/views/AustinRestaurantInspections_3/Dashboard1?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
 
 
+<!-- Austin Legend -->
+![Austin Legend](http://mattdorros.com/img/austin_legend.jpg)
 
 If you're curious about a street or neighboorhood in the graph above, try zooming and panning. And if you're walking around downtown, take a quick look before walking into, say, the crawfish shack - or you may not walk out.
 
