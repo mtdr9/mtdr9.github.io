@@ -19,14 +19,19 @@ When I found out that all of Austin's food inspection data is available, I wante
 <!-- Austin Legend -->
 ![Austin Legend](http://mattdorros.com/img/austin_legend.jpg)
 
+If you're curious about a street or neighboorhood in the graph above, try zooming and panning. And if you're walking around downtown, take a quick look before walking into, say, the crawfish shack - or you may not walk out.
+
+
+
+--Additional Thoughts--
+
 Looking at the city's scores over time, there's not much change at the overall level. 
 
 ![scores_bytime_scatter](http://mattdorros.com/img/scores_bytime_scatter.jpg)
 
-Drilling down to a month-by-month basis, mean citywide scores fluctuate only slightly, with an insignificant regression coefficient (p = 0.670).
+Mean citywide scores fluctuate only slightly, with an insignificant regression coefficient (p = 0.670).
 
 ![scores_regression](http://mattdorros.com/img/scores_regression.jpg)
 
-If you're curious about a street or neighboorhood in the graph above, try zooming and panning. And if you're walking around downtown, take a quick look before walking into, say, the crawfish shack - or you may not walk out.
 
 
