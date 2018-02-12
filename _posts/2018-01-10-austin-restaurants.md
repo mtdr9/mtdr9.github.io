@@ -23,7 +23,7 @@ If you're curious about a street or neighboorhood in the graph above, try zoomin
 
 
 
---Additional Thoughts--
+###--Additional Thoughts--
 
 Looking at the city's scores over time, there's not much change at the overall level. 
 
