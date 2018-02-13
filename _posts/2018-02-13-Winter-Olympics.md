@@ -2,7 +2,7 @@
 layout: post
 title: Winter Olympics
 subtitle: Hats off to Norway
-image: /img/safety_heisenberg.jpeg
+image: /img/red_jacket_skier.jpeg
 tags: [winter, olympics, medal, comparison]
 ---
 
