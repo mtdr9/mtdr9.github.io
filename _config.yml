@@ -24,10 +24,10 @@ description: Personal Site
 # List of links in the navigation bar
 navbar-links:
   Resume: "resume"
-  Resources:
+  Companies:
     - Cambridge Associates: "https://www.cambridgeassociates.com/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
+    - Mariner Investment Group: "http://www.marinerinvestment.com/about.html"
+    - Providential Partners: "http://www.providentialpartnersllc.com/"
   Homepage: "http://mattdorros.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
