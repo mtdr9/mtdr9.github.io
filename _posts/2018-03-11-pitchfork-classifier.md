@@ -1,3 +1,9 @@
+---
+layout: post
+title: Kids These Days Really Love Chicken
+image: /img/regal_sandwich.jpeg
+tags: [poultry, beef, us, consumption]
+---
 
 
 ```python
