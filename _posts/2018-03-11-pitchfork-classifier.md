@@ -1,9 +1,16 @@
 ---
 layout: post
-title: Kids These Days Really Love Chicken
+title: Teaching a Machine to Read Pitchfork
 image: /img/regal_sandwich.jpeg
-tags: [poultry, beef, us, consumption]
+tags: [pitchfork, review, classifier, machine, learning]
 ---
+
+
+# Teaching a Machine to Read Pitchfork
+
+This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. It converts the reviews into a matrix of token counts, then uses a naive Bayes classifier to interpret the bag of words and assign a probability that the review is >= 8.0.
+
+Okay, now witout any jargon, here's what the code is doing. First, it goes to Pitchfork's website, and downloads the text from music album reviews across the site. It then looks at all the different words used in all the reviews, and records how many times each word appears in each review. Next, it looks at the relationship between words in the review and the review score, and over 5000 iterations, learns which kinds of features lead to a score greater than or less than 8. Then, when fed new reviews, it can predict whether they qualify for Best New Music!
 
 
 ```python
@@ -22,8 +29,7 @@ pd.set_option('display.max_columns', 30)
 # set some nicer defaults for matplotlib
 from matplotlib import rcParams
 
-
-
+#further customizing matplotlib
 rcParams['figure.figsize'] = (10, 6)
 rcParams['figure.dpi'] = 150
 rcParams['lines.linewidth'] = 2
@@ -31,21 +37,17 @@ rcParams['axes.grid'] = False
 rcParams['axes.facecolor'] = 'white'
 rcParams['font.size'] = 14
 rcParams['patch.edgecolor'] = 'none'
-
-
 ```
 
 
 ```python
 # a note on scraping pitchfork: according to their robots.txt file, scraping is allowed,
 # as long as users aren't scraping any of their search pages.
-# User-agent: *
-# Allow: /
-# Disallow: /search/
-# Disallow: /search
 ```
 
 ## Scraping Pitchfork for Reviews
+
+The first step is to gather our data. I started with a matrix of links and metadata from github user Meddulla. Then, by pulling all the html from each URL, I add the review text itself, converted to lowercase, to the dataframe.
 
 
 ```python
@@ -161,6 +163,7 @@ def get_multiple_reviews(urls):
 
 
 ```python
+##this code executes the review scraping function. since scraping 5000 reviews takes a while, I've saved it as a csv file. 
 #sample_df = pitchfork_data.sample(5000)
 #sample_df['review'] = sample_reviews_merged
 #sample_df.to_csv('C:\\Users\\Matt\\Documents\\Python_Scripts\\CS109_Zips\\2013-homework\\HW Practice\\pitchfork_reviews.csv')
@@ -168,6 +171,7 @@ def get_multiple_reviews(urls):
 
 
 ```python
+#pull in scraped data saved as a csv for convenience
 sample_df = pd.read_csv(
     'C:\\Users\\Matt\\Documents\\Python_Scripts\\CS109_Zips\\2013-homework\\HW Practice\\pitchfork_reviews.csv', 
      sep=',', encoding = 'latin-1', index_col = 'Unnamed: 0')
@@ -257,31 +261,33 @@ sample_df.head()
 
 
 ```python
-print('min/mean/max: ',pitchfork_data.score.min(), pitchfork_data.score.mean(), pitchfork_data.score.max())
+print('min/mean/max: ',pitchfork_data.score.min(), '/', pitchfork_data.score.mean(), '/', pitchfork_data.score.max())
 print('# reviews: ',len(sample_df))
 ```
 
-    min/mean/max:  0.0 6.955978497748127 10.0
+    min/mean/max:  0.0 / 6.955978497748127 / 10.0
     # reviews:  5000
     
 
 #### Clean the data
-Our review scraper may have imported some NaNs, so let's clean those up
+If any of the links are dead, our scraper will import a NaN, so let's clean those up.
 
 
 ```python
-print('NA values: ',sum(sample_df.review.isnull()))
+print('NA values before cleaning: ',sum(sample_df.review.isnull()))
 sample_df = sample_df.reset_index(drop=True)
 sample_df.drop(sample_df.index[sample_df[sample_df.review.isnull()].index.values], axis=0, inplace=True)
-print('NA values: ',sum(sample_df.review.isnull()))
+print('NA values now: ',sum(sample_df.review.isnull()))
 
 ```
 
-    NA values:  2
-    NA values:  0
+    NA values before cleaning:  2
+    NA values now:  0
     
 
-## Visualizing the Reviewers
+## Data Exploration
+
+### Visualizing the Reviewers
 
 
 ```python
@@ -306,7 +312,7 @@ plt.show()
 ```
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_12_0.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_14_0.png)
 
 
 
@@ -341,61 +347,52 @@ plt.show()
 ```
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_14_0.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_16_0.png)
 
 
+### Visualizing the Reviews
 
-```python
-cutoff_score = 8
-print('Percent of reviews that are \'best new music\' (>%i.0): ' %cutoff_score, sum(sample_df.score>cutoff_score)
-      /sum(sample_df.score>0)*100)
-
-```
-
-    Percent of reviews that are 'best new music' (>8.0):  16.6099659796
-    
-
-## Visualizing the Reviews
-
-First, let's vectorize our dataset and see which words appear frequently
+First, let's vectorize our dataset and see which words appear frequently.
 
 
 ```python
+#import vectorizer and fit it to our data
 from sklearn.feature_extraction.text import CountVectorizer
 vectorizer = CountVectorizer()
 vectorizer.fit(sample_df.review)
+
+#assign vectorizer data to an array
 x = vectorizer.transform(sample_df.review)
 x = x.toarray()
-len(vectorizer.get_feature_names())
+print('number of words in the dataframe: ', len(vectorizer.get_feature_names()))
 words = pd.DataFrame({'word':vectorizer.get_feature_names(),'freq':x.sum(axis=0)})
 print('20 highest frequency words: ', [i for i in words.nlargest(20, 'freq').word.values])
 
 ```
 
+    number of words in the dataframe:  71027
     20 highest frequency words:  ['the', 'of', 'and', 'to', 'in', 'that', 'it', 'is', 'on', 'with', 'as', 'for', 'but', 'his', 'like', 'you', 'from', 'this', 'their', 'an']
     
 
 
 ```python
-plt.hist(words.freq, bins=200)
-plt.title('Nearly every word appears only once')
-plt.xlabel('Frequency')
-plt.ylabel('Number of words that appear F times')
-plt.axis([0,250,0,70000])
-plt.show()
+print('# words that appear once: ', words[words.freq == 1].freq.count())
+print('The most common word appears ', words.freq.max(),' times')
+print('Most common word: ', words[words.freq == words.freq.max()].values[0][1])
 ```
 
+    # words that appear once:  24334
+    The most common word appears  177053  times
+    Most common word:  the
+    
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_19_0.png)
+Stop words like 'the' aren't very meaningful, and words that appear once in a blue moon are not generalizable, so let's add some limits to the frequency of words
 
-
-Stop words aren't very meaningful, and words that appear once in a blue moon are not generalizable, so let's add some limits to the frequency of words
-
-We'll search for the ideal vectorization parameters later; for now let's just try 1e-05 and 0.1.
+We'll use a gridsearch to pick the ideal vectorization parameters later; for now let's just try 1e-03 and 0.1 for our min and max.
 
 
 ```python
-vectorizer = CountVectorizer(min_df = 1e-05, max_df = 0.1)
+vectorizer = CountVectorizer(min_df = 1e-03, max_df = 0.1)
 vectorizer.fit(sample_df.review)
 x = vectorizer.transform(sample_df.review)
 x = x.toarray()
@@ -410,16 +407,28 @@ print('20 highest frequency words: ', [i for i in words.nlargest(20, 'freq').wor
 
 
 ```python
+print('# words that appear once: ', words[words.freq == 1].freq.count())
+print('The most common word appears ', words.freq.max(),' times')
+print('Most common word: ', words[words.freq == words.freq.max()].values[0][1])
+```
+
+    # words that appear once:  0
+    The most common word appears  1213  times
+    Most common word:  rap
+    
+
+
+```python
 plt.hist(words.freq, bins=400)
 plt.title('Stop words eliminated')
 plt.xlabel('Frequency')
 plt.ylabel('Number of words that appear F times')
-plt.axis([0,125,0,45000])
+plt.axis([0,500,0,10000])
 plt.show()
 ```
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_23_0.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_25_0.png)
 
 
 
@@ -429,16 +438,29 @@ print('number of words appearing once: ', words[words.freq==1].freq.count())
 
 ```
 
-    number of words appearing more than once:  46115
-    number of words appearing once:  24334
+    number of words appearing more than once:  25190
+    number of words appearing once:  0
     
 
-That looks better - no more stop words, and a more reasonable distribution of word frequency.
+That looks better - no more stop words or singletons, and a reasonable distribution of word frequency.
 
-Note that the graph is zoomed: some words appear more than 120 times.
+Note that the graph is zoomed: some words appear more than 500 times.
 
+
+
+```python
+cutoff_score = 8
+print('Percent of reviews that are \'best new music\' (>%i.0): ' %cutoff_score, sum(sample_df.score>cutoff_score)
+      /sum(sample_df.score>0)*100)
+
+```
+
+    Percent of reviews that are 'best new music' (>8.0):  16.6099659796
+    
 
 ## Train Classifier
+
+Now that we've set up a word matrix with the vectorizer, we can train our naive Bayes classifier on our data. We'll split our data into training and testing data, optimize our model parameters, and fit the data.
 
 
 ```python
@@ -522,11 +544,12 @@ for a in alphas:
 
 
 ```python
+#show best parameters
 print(max_auc, '|', best_alpha, '|', best_min_df, '|', best_max_df)
 
 ```
 
-    0.770789473684 | 3 | 0.01 | 0.2
+    0.763630952381 | 3 | 0.01 | 0.5
     
 
 
@@ -553,15 +576,17 @@ print('testing accuracy: ', sum(nb.predict(xtest)==ytest)/len(ytest))
 
 ```
 
-    training accuracy:  0.907453726863
-    testing accuracy:  0.816
+    training accuracy:  0.897698849425
+    testing accuracy:  0.814
     
 
-#### Testing/validation
+81.6% accuracy sounds good, but with such an uneven ratio of Best New Music to regular new music, accuracy's not a very good measure of our model's performance. We'll construct a better scorer below.
+
+#### Testing/scoring the Model
 
 
 ```python
-#ROC score!
+#and that scorer is area under the receiver operating characteristic curve! (aucroc)
 from sklearn.metrics import roc_auc_score
 y_score = nb.predict_proba(xtest)[:,1]
 roc_auc_score(ytest, y_score)
@@ -571,7 +596,7 @@ roc_auc_score(ytest, y_score)
 
 
 
-    0.75404794825879673
+    0.74360863095238106
 
 
 
@@ -581,6 +606,9 @@ roc_auc_score(ytest, y_score)
 from sklearn.metrics import roc_curve, auc
 fpr, tpr, thresh = roc_curve(ytest, y_score)
 plt.plot(fpr, tpr)
+plt.title('ROC Curve')
+plt.xlabel('False positive rate (100-specificity)')
+plt.ylabel('True positive rate (sensitivity)')
 plt.plot(np.linspace(0,1,100),np.linspace(0,1,100))
 
 ```
@@ -588,13 +616,15 @@ plt.plot(np.linspace(0,1,100),np.linspace(0,1,100))
 
 
 
-    [<matplotlib.lines.Line2D at 0x13cb3d967f0>]
+    [<matplotlib.lines.Line2D at 0x162bc36a4e0>]
 
 
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_33_1.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_38_1.png)
 
+
+The graph above shows how likely our model is to correctly assign a review of >=8.0 as Best New Music, and a review of <8.0 as not Best New Music. In other words, how well it maximizes true positives while minimizing false positives. You can read more about ROC curves here: https://en.wikipedia.org/wiki/Receiver_operating_characteristic
 
 
 ```python
@@ -608,11 +638,11 @@ print('ideal threshold: ',ideal_thresh)
 plt.show()
 ```
 
-    ideal threshold:  [ 0.01358134]
+    ideal threshold:  [ 0.03175009]
     
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_34_1.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_40_1.png)
 
 
 
@@ -623,21 +653,10 @@ hst = plt.hist(nb.predict_proba(xtest)[:,1], bins=20)
 ```
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_35_0.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_41_0.png)
 
 
-
-```python
-"""As demo'd above, Naive Bayes tends to push probabilties to 0 or 1, mainly because it makes the assumption 
- that features are conditionally independent, which is not true here."""
-```
-
-
-
-
-    "As demo'd above, Naive Bayes tends to push probabilties to 0 or 1, mainly because it makes the assumption \n that features are conditionally independent, which is not true here."
-
-
+As demo'd above, Naive Bayes tends to push probabilties to 0 or 1, mainly because it makes the assumption that features are conditionally independent, which is not true here.
 
 
 ```python
@@ -674,42 +693,46 @@ plt.legend(['Distribution of predicted values', 'True distribution'])
 
 
 
-    <matplotlib.legend.Legend at 0x13cb3b2e748>
+    <matplotlib.legend.Legend at 0x162bc10c710>
 
 
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_37_1.png)
+![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_43_1.png)
 
 
-#### Looking at reviews the model got wrong
+#### Looking at incorrect predictions
+
+Let's look at reviews the model got wrong. 
 
 
 ```python
-#create list with the indices and test results (w)
+#create list with the indices and test results (w), and split into correct and incorrect
 all_pred = list(zip(indices_test,nb.predict(xtest)==ytest))
+correct_pred = [i[0] for i in all_pred if i[1] == True]
+incorrect_pred = [i[0] for i in all_pred if i[1] == False]
+
 #Where false, the prediction didn't agree with reality
-#[i for i in correct_pred[1]==False]
-incorrect_pred = [i[0] for i in correct_pred if i[1]==False]
 print(sample_df.iloc[incorrect_pred[0],:],'\n\n', 
       sample_df.iloc[incorrect_pred[1],:],'\n\n', sample_df.iloc[incorrect_pred[2],:])
+
 ```
 
-    artist                                           Blake Miller
-    album                                      Together With Cats
-    score                                                     7.4
-    reviewer                                           Brian Howe
-    url         http://pitchfork.com/reviews/albums/9769-toget...
-    review      with his murky arrangements, overlapping false...
-    Name: 3205, dtype: object 
-    
-     artist                                       El Perro Del Mar
+    artist                                       El Perro Del Mar
     album                                        El Perro del Mar
     score                                                     8.1
     reviewer                                   Stephen M. Deusner
     url         http://pitchfork.com/reviews/albums/9087-el-pe...
     review      on her second album, swedish singer-songwriter...
     Name: 1562, dtype: object 
+    
+     artist                                                    UGK
+    album                                       Underground Kingz
+    score                                                     8.4
+    reviewer                                          Tom Breihan
+    url         http://pitchfork.com/reviews/albums/10541-unde...
+    review      after a six-year absence that found the south ...
+    Name: 88, dtype: object 
     
      artist                                            Whiskeytown
     album                                               Pneumonia
@@ -720,20 +743,50 @@ print(sample_df.iloc[incorrect_pred[0],:],'\n\n',
     Name: 4177, dtype: object
     
 
+These scores are each fairly close to 8. That's encouraging! Let's check the average.
+
 
 ```python
 sample_df.iloc[incorrect_pred,2].mean()
-#average incorrect review score of 7.64, which is fairly close to the dividing line of 8!
+#the reviews it missed had an average score of 7.64, which is fairly close to our dividing line.
 ```
 
 
 
 
-    7.643478260869569
+    7.688709677419358
 
 
+
+Here's the first review's full text.
+
+
+```python
+print(sample_df.iloc[incorrect_pred[0],5],'\n\n')
+      #sample_df.iloc[incorrect_pred[1],:],'\n\n', sample_df.iloc[incorrect_pred[2],:])
+
+```
+
+    on her second album, swedish singer-songwriter sarah assbring makes mopeyness enticing, expressing her misery through musical elements typically associated with 1950s and 60s pop exuberance.
+    
+    even though she's continuing memphis industries' winning streak, on her second release as el perro del mar ("the sea dog"), sarah assbring sounds so completely bummed out, so miserable in her own skin that even handclaps and tambourines sound like harbingers of doom. but she has so much to live for. for one thing, she makes all this mopeyness seem enticing instead of painfully self-absorbed, expressing her misery through musical elements typically associated with 1950s and 60s pop exuberance: girl-group harmonies, darting guitars, baby-doll vocals, a gene vincent lyric, references to parties and puppy dogs and candy and walking down hills. even the name she gives her hurt-- "the blues"-- seems old-fashioned, a reminder of an archaic time before mood disorders were given their own names and medications.
+    
+    it's never exactly clear what the cause of el perro's blues is, but the album charts a narrative of recovery from some emotionally devastating event-- presumably being dumped. after the lonely drumbeats that begin "candy", which act both as sad heartbeats and an appropriately desolate overture, she runs through the range of reactions. she tries a little self-affirmation on "god knows (you gotta give to get)", a rustling reworking of girl-group sounds that's also the album's strongest tune. on "party", she presumably dials up her ex and tries to hook up again, and her attempts to sound happy are knowingly pathetic. next comes anger: on "dog", she sings accusingly, "all the feelings you have for me, just like for a dog." that she sounds so angelic and steady makes the realization all the more affecting.
+    
+    these songs are so intent and intense in their misery that it's almost a little funny-- tragedy amplified into comedy. anyone who sings "come on over, baby, there's a party going on" as if she's reading from a suicide note risks melodrama and maybe even hysteria. but el perro's a careful singer whose near-tears delivery can imbue downhearted hyperbole with subtle emotional inflections that sound achingly genuine. and her appropriation of traditionally upbeat pop sounds for miserable ends doesn't deaden their powers-- they've always been used to express heartbreak and confusion-- but instead gives them surprising strength as they both assuage her pain and salt her wounds. "this loneliness ain't pretty no more," she sings on "this loneliness", acknowledging the melancholic draw of pop music in general and her music specifically. it's as if she's trying to diffuse any romanticized empathy listeners might develop after prolonged exposure to these songs. she doesn't want to pass her blues along to anyone else.
+    
+    the pairing of "this loneliness" and "coming down the hill" creates a turning point on the album, the moments when el perro decides to get over it, to move on with her life. those songs lead directly into "it's all good", with its ecstatic la-la-la's and ooh-ooh-ooh's. "it's all good. take a new road and never look back," she sings triumphantly. the clouds have parted, the sun is shining, the handclaps can finally sound happy.
+    
+    but the apparent happiness is short lived. in a devastating twist ending, the final song on el perro del mar, a cover of brenda lee's "here comes that feeling", makes clear that the singer's deadening sense of loss, which she has fought so hard to overcome, has been replaced with a numbing emptiness equally vast and burdensome. it's a hole in her heart that can't be filled by the cheery saxophone, doo-wop piano, or even sam cooke's "feel it (don't fight it)", which she masochistically weaves into the outro. the joke's on her, but it's not very funny. 
+    
+    
+    
+
+Kind of an odd review! Words like 'mopeyness', 'misery', and 'bummed' give the review a negative feel in the first few sentences alone. The model is only looking at individual words, and can't differentiate "makes mopeyness enticing" from 'mopeyness' (although it might like to see 'enticing'!).
 
 ## Some interpretation
+
+One technique we could have used to improve the model is principal component analysis (PCA), which breaks down our huge number of characteristics (here, each word is a different characteristic!) into a smaller number of components. However, since we kept each individual word as a feature of the model, we can dive into how each word affects it.
 
 
 ```python
@@ -750,10 +803,10 @@ print('good words: ',words[ind[:10]])
 print('bad words: ',words[ind[-10:]])
 ```
 
-    good words:  ['reissue' 'remastered' 'pavement' 'rev' 'staggering' 'reissued' 'columbia'
-     'reissues' '1969' 'blake']
-    bad words:  ['competent' 'affectations' 'annoying' 'cure' 'problem' 'frustrating'
-     'forgettable' 'tack' 'fails' 'decent']
+    good words:  ['reissue' 'kraftwerk' 'pavement' 'davis' 'rev' 'miles' 'springsteen'
+     'bitches' 'remastered' 'columbia']
+    bad words:  ['suffer' 'progressions' 'sorry' 'sean' 'fails' 'problem' 'shtick' 'decent'
+     'tack' 'forgettable']
     
 
 Pitchfork really likes reissues! They are also not impressed with anything that's merely 'decent' or 'competent'.
@@ -770,176 +823,12 @@ print(nb.predict_proba(v.transform(
 
 ```
 
-    [[ 0.94119048  0.05880952]]
-    [[ 0.12944599  0.87055401]]
-    [[ 0.70460993  0.29539007]]
+    [[ 0.92743168  0.07256832]]
+    [[ 0.14961043  0.85038957]]
+    [[ 0.68398866  0.31601134]]
     
 
-## Various testing, obsolete sections
-I was able to get it to work outside of the gridsearch but not within
+## Next Steps
 
-
-
-```python
-cv_score(nb, x, y)
-```
-
-
-
-
-    array([-0.68242805, -0.67461008, -0.67176271])
-
-
-
-
-```python
-nb = MultinomialNB()
-nb.set_params(alpha=.1)
-nb.fit(xtrain, ytrain)
-nb.predict(xtrain)
-```
-
-
-
-
-    array([0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0,
-           0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0,
-           1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0,
-           0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1,
-           0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1,
-           0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1,
-           1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1])
-
-
-
-
-```python
-vectorizer = CountVectorizer(min_df = min_df)       
-X, Y, v = make_xy(sample_df)
-        
-xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size = 0.2)
-#fit the naive bayes model
-nb = MultinomialNB(alpha=1)
-#nb.set_params(alpha=1)
-nb.fit(xtrain, ytrain)
-#nll = cv_score(nb, X, Y) #function below already implements kfold validation
-nll = sklearn.cross_validation.cross_val_score(nb, xtest, ytest, scoring='neg_log_loss')
-sum(nll)
-```
-
-
-
-
-    -38.903566818443352
-
-
-
-
-```python
-alphas = [0, .1, 1, 5, 10, 50]
-for a in alphas:
-    print(type(a))
-```
-
-    <class 'int'>
-    <class 'float'>
-    <class 'int'>
-    <class 'int'>
-    <class 'int'>
-    <class 'int'>
-    
-
-
-```python
-import sklearn.model_selection
-ll = sklearn.cross_validation.cross_val_score(nb, xtest, ytest, scoring='neg_log_loss')
-sum(ll)
-#-12... pretty bad! 0.683 is as good as random guessing...
-#pre optimization: array([-12.71206784,  -9.92044569,  -9.87049272])
-#the sum of neg log loss was -37.09
-```
-
-
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-223-3cbff8e1365e> in <module>()
-          1 import sklearn.model_selection
-    ----> 2 ll = sklearn.cross_validation.cross_val_score(nb, xtest, ytest, scoring='neg_log_loss')
-          3 sum(ll)
-          4 #-12... pretty bad! 0.683 is as good as random guessing...
-          5 #pre optimization: array([-12.71206784,  -9.92044569,  -9.87049272])
-    
-
-    AttributeError: module 'sklearn' has no attribute 'cross_validation'
-
-
-
-```python
-#cs109 parameter selection. gridsearch above
-import sklearn.model_selection
-#we'll use the area under the roc curve as a metric
-from sklearn.metrics import roc_auc_score
-
-#the grid of parameters to search over
-alphas = [.1, 0.5, 1, 3, 5, 10, 50]
-min_dfs = [1e-5, 1e-4, 1e-3, 1e-2, 1e-1]
-max_dfs = [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 0.2, 0.5]
-
-#Find the best value for alpha and min_df, and the best classifier
-best_alpha = None
-best_min_df = None
-best_max_df = None
-max_auc = -np.inf
-
-for a in alphas:
-    for min_df in min_dfs:   
-        for max_df in max_dfs:
-            vectorizer = CountVectorizer(min_df = min_df, max_df = max_df)       
-            X, Y, v = make_xy(sample_df)
-
-            xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size = 0.2)
-            
-            #fit the naive bayes model
-            nb = MultinomialNB()
-            nb.set_params(alpha=a)
-            nb.fit(xtrain, ytrain)
-            
-            #function below implements kfold validation to find best auc
-            y_score = nb.predict_proba(xtest)[:,1]
-            nll = roc_auc_score(ytest, y_score)
-            #nll = sklearn.cross_validation.cross_val_score(nb, xtest, ytest, scoring='neg_log_loss')
-            if nll > max_auc:
-                max_auc = nll
-                best_alpha = a
-                best_min_df = min_df
-                best_max_df = max_df
-
-```
-
-
-```python
-#this cell obsolete
-
-from sklearn.cross_validation import KFold
-
-def cv_score(clf, x, y, score_func=0):
-    result = 0
-    nfold = 5
-    for train, test in KFold(y.size, nfold):
-        nb.fit(x[train], y[train])
-        result += sklearn.cross_validation.cross_val_score(
-            clf, x[test], y[test], scoring='neg_log_loss')
-    return result/nfold
-
-
-```
-
-# To Do
-Add max_df as a term in our vectorizer to our gridsearch
-   - The model's performance improves at around 0.3
-   - Although that's without cross-fold validation
-
-
+This was a fun project, and if I pick it up again, there'll be a few things I'll want to try. First, PCA would improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd like to test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability: despite having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly. However, I'm curious to see how these other models perform. Finally, I'd like to implement word embedding, which will allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
 
