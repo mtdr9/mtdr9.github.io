@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Teaching a Machine to Read Pitchfork
-image: /img/regal_sandwich.jpeg
+image: /img/pitchfork-classifier/pf-records.jpg
 tags: [pitchfork, review, classifier, machine, learning]
 ---
-
-
-# Teaching a Machine to Read Pitchfork
 
 This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. It converts the reviews into a matrix of token counts, then uses a naive Bayes classifier to interpret the bag of words and assign a probability that the review is >= 8.0.
 
@@ -312,8 +309,7 @@ plt.show()
 ```
 
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_14_0.png)
-
+![png](http://mattdorros.com/img/pitchfork-classifier/pf2.png)
 
 
 ```python
@@ -346,8 +342,8 @@ plt.hist(df_mean[sample_df.groupby('reviewer').count().review>floor_score].score
 plt.show()
 ```
 
+![png](http://mattdorros.com/img/pitchfork-classifier/pf6.png)
 
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_16_0.png)
 
 
 ### Visualizing the Reviews
@@ -427,9 +423,7 @@ plt.axis([0,500,0,10000])
 plt.show()
 ```
 
-
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_25_0.png)
-
+![png](http://mattdorros.com/img/pitchfork-classifier/pf5.png)
 
 
 ```python
@@ -620,8 +614,7 @@ plt.plot(np.linspace(0,1,100),np.linspace(0,1,100))
 
 
 
-
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_38_1.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/pf4.png)
 
 
 The graph above shows how likely our model is to correctly assign a review of >=8.0 as Best New Music, and a review of <8.0 as not Best New Music. In other words, how well it maximizes true positives while minimizing false positives. You can read more about ROC curves here: https://en.wikipedia.org/wiki/Receiver_operating_characteristic
@@ -641,8 +634,7 @@ plt.show()
     ideal threshold:  [ 0.03175009]
     
 
-
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_40_1.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/pf3.png)
 
 
 
@@ -652,8 +644,7 @@ hst = plt.hist(nb.predict_proba(xtest)[:,1], bins=20)
 
 ```
 
-
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_41_0.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/pf2.png)
 
 
 As demo'd above, Naive Bayes tends to push probabilties to 0 or 1, mainly because it makes the assumption that features are conditionally independent, which is not true here.
@@ -697,8 +688,7 @@ plt.legend(['Distribution of predicted values', 'True distribution'])
 
 
 
-
-![png](HW3_practice_pitchfork_files/HW3_practice_pitchfork_43_1.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/pf21.png)
 
 
 #### Looking at incorrect predictions
