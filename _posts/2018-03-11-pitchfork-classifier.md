@@ -5,12 +5,13 @@ image: /img/pitchfork-classifier/pf-records.jpg
 tags: [pitchfork, review, classifier, machine, learning]
 ---
 
-This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. It converts the reviews into a matrix of token counts, then uses a naive Bayes classifier to interpret the bag of words and assign a probability that the review is >= 8.0.
+This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. 
+It scrapes review text from Pitchfork's website, then creates a matrix of how many times each word appears in each review, which it uses to train a naive Bayes classification algorithm to predict whether the album's score will be 8.0 or higher.
 
-Okay, now witout any jargon, here's what the code is doing. First, it goes to Pitchfork's website, and downloads the text from music album reviews across the site. It then looks at all the different words used in all the reviews, and records how many times each word appears in each review. Next, it looks at the relationship between words in the review and the review score, and over 5000 iterations, learns which kinds of features lead to a score greater than or less than 8. Then, when fed new reviews, it can predict whether they qualify for Best New Music!
-
+With this algorithm, we can model which words best signify an excellent album.
 
 ```python
+#this block imports libraries and adjusts settings
 %matplotlib inline
 
 import json
@@ -44,7 +45,7 @@ rcParams['patch.edgecolor'] = 'none'
 
 ## Scraping Pitchfork for Reviews
 
-The first step is to gather our data. I started with a matrix of links and metadata from github user Meddulla. Then, by pulling all the html from each URL, I add the review text itself, converted to lowercase, to the dataframe.
+The first step is to gather our data. I started with a matrix of review links and metadata from github user Meddulla. Then, by pulling all the html from each webpage, I add the review text itself to the dataframe.
 
 
 ```python
@@ -288,7 +289,6 @@ print('NA values now: ',sum(sample_df.review.isnull()))
 
 
 ```python
-#Let's explore the data we've got a bit
 print('# of reviews: ', len(sample_df))
 print('# of reviewers: ', len(sample_df.reviewer.unique()))
 
@@ -348,7 +348,7 @@ plt.show()
 
 ### Visualizing the Reviews
 
-First, let's vectorize our dataset and see which words appear frequently.
+Vectorizing the data will let us see which words appear most frequently.
 
 
 ```python
@@ -574,7 +574,8 @@ print('testing accuracy: ', sum(nb.predict(xtest)==ytest)/len(ytest))
     testing accuracy:  0.814
     
 
-81.6% accuracy sounds good, but with such an uneven ratio of Best New Music to regular new music, accuracy's not a very good measure of our model's performance. We'll construct a better scorer below.
+81.6% accuracy sounds good, but given that only about 15% of reviews are for Best New Music, it's not a great measure of fit. If it misses all of the true positives<sup>1</sup>, it will fail to classify any music as Best New Music correctly. We'll construct a better scorer below.
+<sup>1</sup>*http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/
 
 #### Testing/scoring the Model
 
@@ -617,7 +618,7 @@ plt.plot(np.linspace(0,1,100),np.linspace(0,1,100))
 ![png](http://mattdorros.com/img/pitchfork-classifier/pf4.png)
 
 
-The graph above shows how likely our model is to correctly assign a review of >=8.0 as Best New Music, and a review of <8.0 as not Best New Music. In other words, how well it maximizes true positives while minimizing false positives. You can read more about ROC curves here: https://en.wikipedia.org/wiki/Receiver_operating_characteristic
+The graph above shows how likely our model is to correctly assign a review of >=8.0 as Best New Music, and a review of <8.0 as not Best New Music. In other words, how well it maximizes true positives while minimizing false positives. [See: ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
 
 
 ```python
@@ -688,7 +689,7 @@ plt.legend(['Distribution of predicted values', 'True distribution'])
 
 
 
-![png](http://mattdorros.com/img/pitchfork-classifier/pf21.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/pf1.png)
 
 
 #### Looking at incorrect predictions
@@ -757,26 +758,26 @@ print(sample_df.iloc[incorrect_pred[0],5],'\n\n')
 
 ```
 
-    on her second album, swedish singer-songwriter sarah assbring makes mopeyness enticing, expressing her misery through musical elements typically associated with 1950s and 60s pop exuberance.
+>on her second album, swedish singer-songwriter sarah assbring makes mopeyness enticing, expressing her misery through musical elements typically associated with 1950s and 60s pop exuberance.
     
-    even though she's continuing memphis industries' winning streak, on her second release as el perro del mar ("the sea dog"), sarah assbring sounds so completely bummed out, so miserable in her own skin that even handclaps and tambourines sound like harbingers of doom. but she has so much to live for. for one thing, she makes all this mopeyness seem enticing instead of painfully self-absorbed, expressing her misery through musical elements typically associated with 1950s and 60s pop exuberance: girl-group harmonies, darting guitars, baby-doll vocals, a gene vincent lyric, references to parties and puppy dogs and candy and walking down hills. even the name she gives her hurt-- "the blues"-- seems old-fashioned, a reminder of an archaic time before mood disorders were given their own names and medications.
+even though she's continuing memphis industries' winning streak, on her second release as el perro del mar ("the sea dog"), sarah assbring sounds so completely bummed out, so miserable in her own skin that even handclaps and tambourines sound like harbingers of doom. but she has so much to live for. for one thing, she makes all this mopeyness seem enticing instead of painfully self-absorbed, expressing her misery through musical elements typically associated with 1950s and 60s pop exuberance: girl-group harmonies, darting guitars, baby-doll vocals, a gene vincent lyric, references to parties and puppy dogs and candy and walking down hills. even the name she gives her hurt-- "the blues"-- seems old-fashioned, a reminder of an archaic time before mood disorders were given their own names and medications.
     
-    it's never exactly clear what the cause of el perro's blues is, but the album charts a narrative of recovery from some emotionally devastating event-- presumably being dumped. after the lonely drumbeats that begin "candy", which act both as sad heartbeats and an appropriately desolate overture, she runs through the range of reactions. she tries a little self-affirmation on "god knows (you gotta give to get)", a rustling reworking of girl-group sounds that's also the album's strongest tune. on "party", she presumably dials up her ex and tries to hook up again, and her attempts to sound happy are knowingly pathetic. next comes anger: on "dog", she sings accusingly, "all the feelings you have for me, just like for a dog." that she sounds so angelic and steady makes the realization all the more affecting.
+it's never exactly clear what the cause of el perro's blues is, but the album charts a narrative of recovery from some emotionally devastating event-- presumably being dumped. after the lonely drumbeats that begin "candy", which act both as sad heartbeats and an appropriately desolate overture, she runs through the range of reactions. she tries a little self-affirmation on "god knows (you gotta give to get)", a rustling reworking of girl-group sounds that's also the album's strongest tune. on "party", she presumably dials up her ex and tries to hook up again, and her attempts to sound happy are knowingly pathetic. next comes anger: on "dog", she sings accusingly, "all the feelings you have for me, just like for a dog." that she sounds so angelic and steady makes the realization all the more affecting.
     
-    these songs are so intent and intense in their misery that it's almost a little funny-- tragedy amplified into comedy. anyone who sings "come on over, baby, there's a party going on" as if she's reading from a suicide note risks melodrama and maybe even hysteria. but el perro's a careful singer whose near-tears delivery can imbue downhearted hyperbole with subtle emotional inflections that sound achingly genuine. and her appropriation of traditionally upbeat pop sounds for miserable ends doesn't deaden their powers-- they've always been used to express heartbreak and confusion-- but instead gives them surprising strength as they both assuage her pain and salt her wounds. "this loneliness ain't pretty no more," she sings on "this loneliness", acknowledging the melancholic draw of pop music in general and her music specifically. it's as if she's trying to diffuse any romanticized empathy listeners might develop after prolonged exposure to these songs. she doesn't want to pass her blues along to anyone else.
+these songs are so intent and intense in their misery that it's almost a little funny-- tragedy amplified into comedy. anyone who sings "come on over, baby, there's a party going on" as if she's reading from a suicide note risks melodrama and maybe even hysteria. but el perro's a careful singer whose near-tears delivery can imbue downhearted hyperbole with subtle emotional inflections that sound achingly genuine. and her appropriation of traditionally upbeat pop sounds for miserable ends doesn't deaden their powers-- they've always been used to express heartbreak and confusion-- but instead gives them surprising strength as they both assuage her pain and salt her wounds. "this loneliness ain't pretty no more," she sings on "this loneliness", acknowledging the melancholic draw of pop music in general and her music specifically. it's as if she's trying to diffuse any romanticized empathy listeners might develop after prolonged exposure to these songs. she doesn't want to pass her blues along to anyone else.
     
-    the pairing of "this loneliness" and "coming down the hill" creates a turning point on the album, the moments when el perro decides to get over it, to move on with her life. those songs lead directly into "it's all good", with its ecstatic la-la-la's and ooh-ooh-ooh's. "it's all good. take a new road and never look back," she sings triumphantly. the clouds have parted, the sun is shining, the handclaps can finally sound happy.
+the pairing of "this loneliness" and "coming down the hill" creates a turning point on the album, the moments when el perro decides to get over it, to move on with her life. those songs lead directly into "it's all good", with its ecstatic la-la-la's and ooh-ooh-ooh's. "it's all good. take a new road and never look back," she sings triumphantly. the clouds have parted, the sun is shining, the handclaps can finally sound happy.
     
-    but the apparent happiness is short lived. in a devastating twist ending, the final song on el perro del mar, a cover of brenda lee's "here comes that feeling", makes clear that the singer's deadening sense of loss, which she has fought so hard to overcome, has been replaced with a numbing emptiness equally vast and burdensome. it's a hole in her heart that can't be filled by the cheery saxophone, doo-wop piano, or even sam cooke's "feel it (don't fight it)", which she masochistically weaves into the outro. the joke's on her, but it's not very funny. 
+but the apparent happiness is short lived. in a devastating twist ending, the final song on el perro del mar, a cover of brenda lee's "here comes that feeling", makes clear that the singer's deadening sense of loss, which she has fought so hard to overcome, has been replaced with a numbing emptiness equally vast and burdensome. it's a hole in her heart that can't be filled by the cheery saxophone, doo-wop piano, or even sam cooke's "feel it (don't fight it)", which she masochistically weaves into the outro. the joke's on her, but it's not very funny.
     
     
     
 
-Kind of an odd review! Words like 'mopeyness', 'misery', and 'bummed' give the review a negative feel in the first few sentences alone. The model is only looking at individual words, and can't differentiate "makes mopeyness enticing" from 'mopeyness' (although it might like to see 'enticing'!).
+Kind of an odd review! Words like 'mopeyness', 'misery', and 'bummed' give the review a negative feel in the first few sentences alone. The model is only looking at individual words, and can't differentiate "makes mopeyness enticing" from 'mopeyness' (although it might like to see 'enticing').
 
 ## Some interpretation
 
-One technique we could have used to improve the model is principal component analysis (PCA), which breaks down our huge number of characteristics (here, each word is a different characteristic!) into a smaller number of components. However, since we kept each individual word as a feature of the model, we can dive into how each word affects it.
+One technique we could have used to improve the model is principal component analysis (PCA), which breaks down our huge number of characteristics, one for each word, into a smaller number of components. However, since we kept each individual word as a feature of the model, we can dive into how each word affects it.
 
 
 ```python
@@ -820,5 +821,5 @@ print(nb.predict_proba(v.transform(
 
 ## Next Steps
 
-This was a fun project, and if I pick it up again, there'll be a few things I'll want to try. First, PCA would improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd like to test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability: despite having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly. However, I'm curious to see how these other models perform. Finally, I'd like to implement word embedding, which will allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
+In future iterations, I'd like to use PCA to improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd like to test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability: despite having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly. Nonetheless, I'm curious to test how these other models perform. Finally, I'd like to implement word embedding, which will allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
 
