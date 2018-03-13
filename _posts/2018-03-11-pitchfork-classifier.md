@@ -423,7 +423,7 @@ plt.axis([0,500,0,10000])
 plt.show()
 ```
 
-![png](http://mattdorros.com/img/pitchfork-classifier/pf5.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/rg3.png)
 
 
 ```python
