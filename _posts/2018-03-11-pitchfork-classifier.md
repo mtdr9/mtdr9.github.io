@@ -309,7 +309,7 @@ plt.show()
 ```
 
 
-![png](http://mattdorros.com/img/pitchfork-classifier/pf2.png)
+![png](http://mattdorros.com/img/pitchfork-classifier/rg2.png)
 
 
 ```python
