@@ -801,22 +801,30 @@ Pitchfork really likes reissues! They are also not impressed with anything that'
 
 
 ```python
-#custom review testing
-print(nb.predict_proba(v.transform(
-    ['awful tinny repetitive boring dull'])))
-print(nb.predict_proba(v.transform(
-    ['rich experimental complex excellent luxurious reissue from columbia'])))
-print(nb.predict_proba(v.transform(
-    ['kanye'])))
+#testing out review snippets
+
+#reviews comprised of words that seem like they would be good/bad, but did not appear in best/worst 100 words
+print('good sounding words: ', nb.predict_proba(v.transform(
+    ['meticulous and timeless masterpiece, overwhelmingly excellent'])))
+print('bad sounding words: ', nb.predict_proba(v.transform(
+    ['disgusting overused meaningless drivel'])))
+
+#reviews based on the best/worst 100 words of our vectorizer
+print('best words: ', nb.predict_proba(v.transform(
+    ['this otherwordly quintet is absolute gas, a terrific achievement for 20th century france'])))
+print('worst words: ', nb.predict_proba(v.transform(
+    ['an aimless, jerky and redundant shoegaze group from the 2000s trades principle for cliches'])))
 
 ```
+    good sounding words:  [[ 0.39669778  0.60330222]]
+    bad sounding words:  [[ 0.83241621  0.16758379]]
+    best words:  [[ 0.0053908  0.9946092]]
+    worst words:  [[  9.99949051e-01   5.09494701e-05]]
 
-    [[ 0.92743168  0.07256832]]
-    [[ 0.14961043  0.85038957]]
-    [[ 0.68398866  0.31601134]]
-    
+In the above testing arrays, the second number indicates the probability our model assigns that the review describes Best New Music. After trying a few sets of good and bad sounding words, it was much easier to construct a negative review than a positive review, which makes sense given that only ~15% of reviews in our training and testing data qualify for Best New Music.
+
 
 ## Next Steps
 
-In future iterations, I'd like to use PCA to improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd like to test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability: despite having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly. Nonetheless, I'm curious to test how these other models perform. Finally, I'd like to implement word embedding, which will allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
+In future iterations, I'd like to use principal component analysis to improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd like to test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability: despite having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly. Nonetheless, I'm curious to test how these other models perform. Finally, I'd like to implement word embedding, which will allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
 
