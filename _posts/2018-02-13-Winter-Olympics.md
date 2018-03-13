@@ -12,7 +12,7 @@ I also often wonder how my country stacks up against others in the field, and to
 <style> .responsive-wrap iframe{ max-width: 100%;} </style>
 <iframe src="https://public.tableau.com/views/winter_olympic_medals_chart_CY/Dashboard1?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
 
-Here's a basic look at medals per country per capita, from 1924-2014. I used 2017 population data<sub>2</sub>, so countries with greater population growth will be disfavored.
+Here's a basic look at medals per country per capita, from 1924-2014. I used 2017 population data<sup>2</sup>, so countries with greater population growth will be disfavored.
 
 <style> .responsive-wrap iframe{ max-width: 100%;} </style>
 <iframe src="https://public.tableau.com/shared/4NR739M7D?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
