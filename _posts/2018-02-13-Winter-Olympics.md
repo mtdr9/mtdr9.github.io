@@ -23,7 +23,7 @@ Norway earned the 3rd most medals overall, and with a population of just 5 milli
 
 One surprise here for me was Denmark, which has only won 1 medal among a population of 5 million. Given that it's a Nordic country like its Scandinavian peers, I'd expected it to have a better streak, but it turns out that despite being relatively northern, Denmark stays above 0 Celsius for most of the year. Based on how much my friend in Copenhagen complaigns, I'd have thought it was consistently 40 below!
 
-The map really puts in perspective how few countries send top performers to the winter olympics. This is intuitive, as an olympic medalist from e.g. Saudi Arabia would have been inexplicable. Although with the advent of ![Ski Dubai](https://www.theplaymania.com/skidubai/ski-dubai-overview), perhaps it's not out of the question.
+The map really puts in perspective how few countries send top performers to the winter olympics. This is intuitive, as an olympic medalist from, say, Saudi Arabia would have been inexplicable. Although with the advent of [Ski Dubai](https://www.theplaymania.com/skidubai/ski-dubai-overview), perhaps it's not out of the question.
 
 Notes:
 1. East Germany and West Germany are included with Germany, and Russia includes the Soviet Union and Team Unified.
