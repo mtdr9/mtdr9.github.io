@@ -25,6 +25,7 @@ description: Personal Site
 navbar-links:
   Resume: "resume"
   Companies:
+    - Wayfair: "https://www.wayfair.com/"
     - Cambridge Associates: "https://www.cambridgeassociates.com/"
     - Mariner Investment Group: "http://www.marinerinvestment.com/about.html"
     - Providential Partners: "http://www.providentialpartnersllc.com/"
