@@ -5,8 +5,8 @@ subtitle:
 ---
 ### WORK EXPERIENCE
 
-**Wayfair - Senior Associate Product Manager**
-Boston, MA | May 2018 - Present
+**Wayfair – Senior Associate Product Manager**
+Boston, MA | May 2018 – Present
 - As a product manager at Wayfair, I work with engineers and internal Marketing stakeholders to build intelligence systems that use machine learning, real-time tracking, and personalization to engage millions of Wayfair users.
 - My team also owns Wayfair's identity and segmentation efforts, creating a hollistic picture of who our customers are, using 1st and 3rd party data.
 
