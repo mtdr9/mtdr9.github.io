@@ -13,16 +13,10 @@ Boston, MA | May 2018 – Present
 
 **Cambridge Associates – Senior Investment Associate, Quantitative Modeling Team Leader**  
 Boston, MA | July 2015 – April 2018 
-- Direct team of 40 across 6 offices to fulfill quantitative roles: spearheaded construction of 7 manager and client analytics packages, co-designed quant training program and trained 30 associates. Additionally, solve computational problems directed to us by team leads.  
+- Directed team of 40 across 6 offices to fulfill quantitative roles: spearheaded construction of 7 manager and client analytics packages, co-designed quant training program and trained 30 associates. Additionally, solve computational problems directed to us by team leads.  
 - Oversaw team of 5 to build a manager performance analysis model using VBA/Excel, in order to automate the tracking of key metrics to inform portfolio construction. Became the most used model across Cambridge’s 100+ Investment Associates. Increased scope of available performance analytics by 180%.  
-- Provide investment
-guidance to institutional clients; resolve questions on data and analyses;
-provide concise summaries of reports and methodology; present portfolio
-recommendations to investment committees.  
-- Facilitate 12
-client teams’ processes, advising on $5.3 billion in assets. Create clear and
-effective presentation materials for clients and directors; lead due diligence
-and research projects; anticipate client/team needs and establish and execute
+- Provided investment guidance to institutional clients; resolve questions on data and analyses; provide concise summaries of reports and methodology; present portfolio recommendations to investment committees.  
+- Facilitated 12 client teams’ processes, advising on $5.3 billion in assets. Create clear and effective presentation materials for clients and directors; lead due diligence and research projects; anticipate client/team needs and establish and execute
 plans to address them.  
 - Performed excellently on a range of analytic tasks and project management, and was promoted to Senior Associate in charge of the quant modeling team.
 
