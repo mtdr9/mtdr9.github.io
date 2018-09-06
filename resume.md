@@ -5,8 +5,13 @@ subtitle:
 ---
 ### WORK EXPERIENCE
 
+**Wayfair - Senior Associate Product Manager**
+Boston, MA | May 2018 - Present
+- As a product manager at Wayfair, I work with engineers and internal Marketing stakeholders to build intelligence systems that use machine learning, real-time tracking, and personalization to engage millions of Wayfair users.
+- My team also owns Wayfair's identity and segmentation efforts, creating a hollistic picture of who our customers are, using 1st and 3rd party data.
+
 **Cambridge Associates – Senior Investment Associate, Quantitative Modeling Team Leader**  
-Boston, MA | July 2015 – Present  
+Boston, MA | July 2015 – April 2018 
 - Direct team of 40 across 6 offices to fulfill quantitative roles: spearheaded construction of 7 manager and client analytics packages, co-designed quant training program and trained 30 associates. Additionally, solve computational problems directed to us by team leads.  
 - Oversaw team of 5 to build a manager performance analysis model using VBA/Excel, in order to automate the tracking of key metrics to inform portfolio construction. Became the most used model across Cambridge’s 100+ Investment Associates. Increased scope of available performance analytics by 180%.  
 - Provide investment
