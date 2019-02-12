@@ -9,7 +9,7 @@ subtitle:
 
 Boston, MA | May 2018 – Present
 - As a product manager at Wayfair, I work with engineers and internal Marketing stakeholders to build intelligence systems that use machine learning, real-time tracking, and personalization to engage millions of Wayfair users.
-- My team also owns Wayfair's identity and segmentation efforts, creating a hollistic picture of who our customers are, using 1st and 3rd party data.
+- My team also owns Wayfair's identity and segmentation efforts, creating a holistic picture of who our customers are, using 1st and 3rd party data.
 
 **Cambridge Associates – Senior Investment Associate, Quantitative Modeling Team Leader**  
 Boston, MA | July 2015 – April 2018 
