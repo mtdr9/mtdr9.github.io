@@ -112,7 +112,7 @@ url-pretty: "MattDorros.com"  # eg. "deanattali.com/beautiful-jekyll"
 # disqus: "mattdorros"
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-140617175-1"
 
 # Google Tag Manager ID
 #gtm: ""
