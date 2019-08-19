@@ -17,7 +17,7 @@ baseurl: ""
 title: Matt Dorros
 
 # Short description of your site
-description: Personal Site
+description: Data Science & Visualization
 
 # --- Navigation bar options --- #
 
@@ -60,7 +60,7 @@ author:
   email: "mattdorros@gmail.com"
   facebook: mattdorros  # eg. daattali
   github: mtdr9    # eg. daattali
-  twitter: MTDR___   # eg. daattali
+  twitter: dorrosmatt   # eg. daattali
   reddit: yourname    # eg. daattali
   google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
   linkedin: matt-dorros  # eg. daattali
