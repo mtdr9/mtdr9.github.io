@@ -5,10 +5,13 @@ image: /img/pitchfork-classifier/pf-records.jpg
 tags: [pitchfork, review, classifier, machine, learning]
 ---
 
-This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. 
-It scrapes review text from Pitchfork's website, then creates a matrix of how many times each word appears in each review, which it uses to train a naive Bayes classification algorithm to predict whether the album's score will be 8.0 or higher.
+This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. I rely pretty heavily on Pitchfork to find new music and better understand what I'm listening to, and analyzing the results of this classifier helped me investigate a few questions about how the site's reviews work:  
+* What does Pitchfork value in an album? (Spoiler: jazz)
+* Where does Pitchfork have biases or blind spots?
+* What kind of creative language do reviewers use to describe great or terrible albums?
 
-With this algorithm, we can model which words best signify an excellent album.
+#### How does the classifier work?
+It scrapes review text from Pitchfork's website, then creates a matrix of how many times each word appears in each review, which it uses to train a naive Bayes classification algorithm to predict whether the album's score will be 8.0 or higher. With this algorithm, we can model which words best signify an excellent album. In future iterations, incorporating word embedding would allow the model to learn the meaning behind the words, rather than just analyzing individual words in a vacuum, which would improve the classifier's accuracy by allowing it to understand how words that can be positive or negative in different contexts are used.
 
 ```python
 #this block imports libraries and adjusts settings
