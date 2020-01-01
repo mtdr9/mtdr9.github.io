@@ -11,41 +11,9 @@ This week I built a classifier that determines whether Pitchfork's album reviews
 * Where does Pitchfork have biases or blind spots?
 * What kind of creative language do reviewers use to describe great or terrible albums?
 
-#### How does the classifier work?
+## How does the classifier work?
 It scrapes review text from Pitchfork's website, then creates a matrix of how many times each word appears in each review, which it uses to train a naive Bayes classification algorithm to predict whether the album's score will be 8.0 or higher. With this algorithm, we can model which words best signify an excellent album. In future iterations, incorporating word embedding would allow the model to learn the meaning behind the words, rather than just analyzing individual words in a vacuum, which would improve the classifier's accuracy by allowing it to understand how words that can be positive or negative in different contexts are used.
 
-```python
-#this block imports libraries and adjusts settings
-%matplotlib inline
-
-import json
-
-import requests
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
-pd.set_option('display.width', 500)
-pd.set_option('display.max_columns', 30)
-
-# set some nicer defaults for matplotlib
-from matplotlib import rcParams
-
-#further customizing matplotlib
-rcParams['figure.figsize'] = (10, 6)
-rcParams['figure.dpi'] = 150
-rcParams['lines.linewidth'] = 2
-rcParams['axes.grid'] = False
-rcParams['axes.facecolor'] = 'white'
-rcParams['font.size'] = 14
-rcParams['patch.edgecolor'] = 'none'
-```
-
-
-```python
-# a note on scraping pitchfork: according to their robots.txt file, scraping is allowed,
-# as long as users aren't scraping any of their search pages.
-```
 
 ## Scraping Pitchfork for Reviews
 
@@ -58,6 +26,9 @@ pitchfork_data = pd.read_csv(
     'https://gist.githubusercontent.com/meddulla/8277139/raw/f1595d50cada910d082bc1dfd8ef47ff49910cb3/pitchfork-reviews.csv',
            sep = ',')
 pitchfork_data.head()
+
+# a note on scraping pitchfork: according to their robots.txt file, scraping is allowed,
+# as long as users aren't scraping any of their search pages.
 ```
 
 
