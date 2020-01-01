@@ -5,7 +5,8 @@ image: /img/pitchfork-classifier/pf-records.jpg
 tags: [pitchfork, review, classifier, machine, learning]
 ---
 
-This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. I rely pretty heavily on Pitchfork to find new music and better understand what I'm listening to, and analyzing the results of this classifier helped me investigate a few questions about how the site's reviews work:  
+This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. I rely pretty heavily on Pitchfork to find new music and better understand what I'm listening to, and analyzing the results of this classifier helped me investigate a few questions about how the site's reviews work:
+
 * What does Pitchfork value in an album? (Spoiler: jazz)
 * Where does Pitchfork have biases or blind spots?
 * What kind of creative language do reviewers use to describe great or terrible albums?
