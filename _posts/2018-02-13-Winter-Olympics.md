@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Medaling in the Winter Olympics
-subtitle: Must be cold in Norway
+title: Medals in the Winter Olympics
+subtitle: & with Tableau charts in iframes
 image: /img/red_jacket_skier.jpeg
 tags: [winter, olympics, medal, comparison]
 ---
