@@ -3,7 +3,7 @@ layout: post
 title: Medals in the Winter Olympics
 subtitle: And Tableau charts in iframes
 image: /img/red_jacket_skier.jpeg
-tags: [winter, olympics, medal, comparison]
+tags: [winter, olympics, medals]
 ---
 
 The Olympics are here, and it's time to ask the quadrennial question: how on Earth do the ski jumpers fly off 100m ramps without dying of fright, let alone impact? For me, summoning the courage to hit the "M" jumps is a victory for the weekend.
