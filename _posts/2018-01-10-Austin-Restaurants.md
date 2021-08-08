@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Health Inspections in Austin Restaurants
-subtitle: And especially failed health inspections
+subtitle: As low as 36/100
 image: /img/food_mixing.jpeg
 tags: [food, safety, austin, texas]
 ---
 
 Every time I see people eating in a New York restaurant with a big orange "C" on the window I wonder: why is anyone eating there? Maybe those people were on their phones as they walked in. Or they've never seen _Kitchen Nightmares_.
 
-I'm planning to travel to Austin, and when I found out that all of their food inspection data is available, I wanted to see how the city's restaurants were doing on their health inspections. Here they all are by their minimum health inspection score, from 2015-2017. I've also included their most recent score, and, since food sanitation is a continuous commitment, their average score.
+I'm planning to travel to Austin, and when I found out that all of their food inspection data is available, I wanted to see how the city's restaurants compared. Here they all are by their minimum inspection score, from 2015-2017. I've also included their most recent score, and, since food sanitation is a continuous commitment, their average score.
 
 
 
