@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Medals in the Winter Olympics
-subtitle: & with Tableau charts in iframes
+subtitle: And Tableau charts in iframes
 image: /img/red_jacket_skier.jpeg
 tags: [winter, olympics, medal, comparison]
 ---
