@@ -7,7 +7,7 @@ tags: [winter, olympics, medal, comparison]
 ---
 
 The Olympics are here, and it's time to ask the quadrennial question: how on Earth do the ski jumpers fly off 100m ramps without dying of fright, let alone impact? For me, summoning the courage to hit the "M" jumps is a victory for the weekend.
-I also often wonder how my country stacks up against others in the field, and to answer that question, here is a historical view of each country's<sup>1</sup> olympic performance, with the top 20 shown initially.
+I also wondered how my country stacks up against others in the field, and to answer that question, here's a historical view of each country's<sup>1</sup> olympic performance, with the top 20 shown initially.
 
 <style> .responsive-wrap iframe{ max-width: 100%;} </style>
 <iframe src="https://public.tableau.com/views/winter_olympic_medals_chart_CY/Dashboard1?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
