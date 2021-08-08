@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Banana Data Podcast
-image: /img/pitchfork-classifier/pf-records.jpg
+image: /img/bdp.jpg
 tags: [podcast, wayfair]
 ---
 
