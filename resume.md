@@ -39,7 +39,7 @@ Major GPA: 4.0; Cumulative GPA: 3.8; GMAT 770
 
 ### ADDITIONAL SKILLS AND EXPERIENCE  
   
-- Programming/Query Languages: Python (Pandas, SciKit Learn), VBA, MATLAB, SQL  
-- BI Tools: Tableau
+- Programming/Query Languages: Python (Pandas, SciKit Learn), MATLAB, SQL, VBA  
+- BI Tools: Tableau, Looker
 - Language Fluency: English, Spanish  
-- Other Extracurricular: 3x medalist in Brazilian Jujitsu tournaments, classical pianist, bass guitarist, Eagle Scout, oil painter, Finance & standardized testing tutor: classroom & 1-on-1 (2012-2015), former semi-professional video game player (SSBM, 2013-2015), DECA business/marketing competition 1st Place @ MA state level.
+- Other Extracurricular: pianist, bass guitarist, Eagle Scout, oil painter, 3x medalist in Brazilian Jujitsu tournaments, former semi-pro video game player (SSBM).
