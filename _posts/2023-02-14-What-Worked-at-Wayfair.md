@@ -90,3 +90,19 @@ Managing Jackson mostly required directing, which came down to four components:
 Managing Jennifer required identifying which parts of a project required what level of scoping and leadership. For example, she had worked as a veritable data scientist, and her coding abilities were top level among the search marketing analysts. She could take a directive like "automate this model so that it executes without any intervention, and reports out results", and run with it, needing only occasional answers or resources. However, finding a fast and [MECE](https://en.wikipedia.org/wiki/MECE_principle) approach to a business problem was harder for her. To solve a problem like the landing page issue alluded to earlier, I would have needed to coach her heavily through step 1 as described. Once the framework of analysis was set up, I could support her as she explored each one, encouraging her to move on to the next area before she spent too long getting an unnecessarily perfect answer.
 
 The main takeaway from each of these examples is that for every task and person working on it, a different level of leadership is required.
+
+**3. Be your own coach**
+
+Step 1: watch Ted Lasso
+Step 2: get a job as a data analyst manager at a fortune 100 company
+Step 3: ???
+Step 4: profit
+
+You don't need to be a manager to be a coach. Asking yourself the right questions can squeeze better results out of your own projects. Here are some I've relied on over the years; these work on yourself and others.
+
+* Define the problem
+*     1. What other angles can you think of?
+*     2. What's not clear yet for you?
+*     3. What's one more possibility?
+*     4. What else?
+* Solve the problem
