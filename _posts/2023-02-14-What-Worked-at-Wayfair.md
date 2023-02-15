@@ -24,21 +24,21 @@ RICE prioritization
 > 2. Impact: This factor measures the potential impact of the task or project. For example, a project that has the potential to significantly increase revenue has a higher impact than a project that has a minor impact on revenue.
 > 3. Confidence: This factor measures the level of confidence that the team has in the task or project. For example, a project that has a well-defined plan and clear objectives has a higher confidence level than a project that lacks clarity and structure.
 > 4. Effort: This factor measures the amount of effort required to complete the task or project. For example, a project that requires a significant amount of time and resources has a higher effort level than a project that requires minimal effort.  
-
+> 
 > To use the RICE prioritization framework, assign a score to each of these four factors, and then multiply them together to get a final score. For example, if a project has a risk score of 8, an impact score of 7, a confidence score of 9, and an effort score of 5, its RICE score would be 2520 (8 x 7 x 9 x 5).
 
 Effort vs. Value
 > The effort vs. value framework is a simple and effective way to prioritize tasks or projects based on their potential value and the effort required to complete them.
 > 1. Effort: This factor measures the amount of effort required to complete the task or project. For example, a project that requires a significant amount of time and resources has a higher effort level than a project that requires minimal effort.
 > 2. Value: This factor measures the potential value of the task or project. For example, a project that has the potential to significantly increase revenue has a higher value than a project that has a minor impact on revenue.  
-
+> 
 > To use the effort vs. value framework, plot each task or project on a graph with effort on the x-axis and value on the y-axis. Tasks or projects that require high effort but have low value should be deprioritized, while tasks or projects that have high value and low effort should be prioritized.
 
 Urgency vs. Importance
 > The urgency vs. importance framework is a classic tool used to prioritize tasks or projects based on their urgency and importance.
 > 1. Urgency: This factor measures how quickly the task or project needs to be completed. For example, a task that has a tight deadline has a higher urgency than a task with a more relaxed deadline.
 > 2. Importance: This factor measures the importance of the task or project. For example, a task that is critical to the success of a project has a higher importance than a task that is not critical.  
-
+> 
 > To use the urgency vs. importance framework, plot each task or project on a matrix with urgency on the x-axis and importance on the y-axis. Tasks or projects that are both urgent and important should be prioritized, while tasks or projects that are not urgent or important should be deprioritized.
 
 To determine what to do for the next 6-12 months, I'd start with a brainstorming session, getting all of the ideas from the team on paper, without judging their quality. Then, I'd quickly sort ideas on a 2x2 matrix of effort and value. There's probably a lot of ideas, and I want to pluck the low hanging fruit - those high value, low effort ideas - as quickly as possible. Once I have a set of "viable" ideas from the effort vs. value exercise, I'd run them through full RICE prioritization to figure out the relative quality of each, which I'd use to construct my roadmap.
