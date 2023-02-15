@@ -24,12 +24,16 @@ Here's a few samples of artwork generated using the features above.
 
 Emperor fox in red robes on the throne with a gold crown, rembrant oil painting, psychedelic color scheme
 ![404 image not available](/img/Emperor fox in red robes on the throne with a gold crown, rembrant oil painting, psychedelic color scheme.png "Look at THIS beaut")
+
 An oil painting of a skeleton riding a clydesdale in the style of dali
 ![404 image not available](/img/An oil painting of a skeleton riding a clydesdale in the style of dali.png "Look at THIS beaut")
+
 Leochares Belvedere Apollo holding a boquet of flowers impressionism
 ![404 image not available](/img/Leochares Belvedere Apollo holding a boquet of flowers impressionism.png "Look at THIS beaut")
+
 A 3d model samus aran relaxing by the pool, pink and blue color scheme, with a lavish background
 ![404 image not available](/img/A 3d model samus aran relaxing by the pool, pink and blue color scheme, with a lavish background.png "Look at THIS beaut")
+
 Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hieronymus Bosch
 ![404 image not available](/img/Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hieronymus Bosch .png "Look at THIS beaut")
 
