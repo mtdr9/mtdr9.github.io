@@ -45,4 +45,4 @@ Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hierony
 **Mitigating factors with AI art problems**
 1. Copyrights - This is tough. We’ll probably see a lot of change in the industry, as artists restrict the use of their work from AI training. As a result, AI-generated art could become more expensive
 2. Death of art - I don't believe this will actually manifest, outside of the typical undulations of capitalism seen from the industrial revolution to the advent of the internet. Novel artwork will still be incentivized, and we’ll see the rise of AI-assisted artists. Some artists will be displaced, others will learn new skills and thrive
-3. Bias - it’s up to communities to moderate content. No one would take back the written word because it can be used to distribute hate
+3. Bias - TBD if AI art can overcome bias in training data; even self-driving cars are affected by this. With how the art is used, the knife cuts both ways, and in my opinion the burden is mainly on platforms and communities to moderate content. No one would take back the written word because it can be used to distribute hate
