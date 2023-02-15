@@ -100,9 +100,9 @@ Step 4: profit
 
 You don't need to be a manager to be a coach. Asking yourself the right questions can squeeze better results out of your own projects. Here are some I've relied on over the years; these work on yourself and others.
 
-* Define the problem
-*     1. What other angles can you think of?
-*     2. What's not clear yet for you?
-*     3. What's one more possibility?
-*     4. What else?
-* Solve the problem
+1. Define the problem
+     1. What other angles can you think of?
+     2. What's not clear yet for you?
+     3. What's one more possibility?
+     4. What else?
+2. Solve the problem
