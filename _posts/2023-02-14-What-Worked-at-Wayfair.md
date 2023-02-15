@@ -93,10 +93,10 @@ The main takeaway from each of these examples is that for every task and person 
 
 **3. Be your own coach**
 
-Step 1: watch Ted Lasso
-Step 2: get a job as a data analyst manager at a fortune 100 company
-Step 3: ???
-Step 4: profit
+Step 1: watch Ted Lasso  
+Step 2: get a job as a data analyst manager at a fortune 100 company  
+Step 3: ???  
+Step 4: profit  
 
 You don't need to be a manager to be a coach. Asking yourself the right questions can squeeze better results out of your own projects. Here are some I've relied on over the years; these work on yourself and others.
 
