@@ -37,6 +37,9 @@ A 3d model samus aran relaxing by the pool, pink and blue color scheme, with a l
 Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hieronymus Bosch
 ![404 image not available](/img/Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hieronymus Bosch .png "Look at THIS beaut")
 
+Oil painting of Marble veins triadic technicolor color scheme
+![404 image not available](/img/Oil painting of Marble veins triadic technicolor color scheme.png "Look at THIS beaut")
+
 **Problems with AI art**
 1. Copyrights - the works they’re trained on are often copyrighted
 2. Death of art - as more art becomes AI-generated, there’ll be less novel art produced, which could create a self-destructive spiral
