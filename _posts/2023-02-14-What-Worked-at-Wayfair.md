@@ -112,3 +112,5 @@ You don't need to be a manager to be a coach. Asking yourself the right question
 3. Integrate what you've learned
     1. What do you think will be the end result?
     2. What will you take away from this?
+
+So, you've made it to the bottom of this article. What will you take away from this?
