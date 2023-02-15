@@ -34,11 +34,11 @@ Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hierony
 ![404 image not available](/img/Digital art Tony hawk hoodrats rustic family dramatic lighting cyberpunk Hieronymus Bosch .png "Look at THIS beaut")
 
 **Problems with AI art**
-Copyrights - the works they’re trained on are often copyrighted
-Death of art - as more art becomes AI-generated, there’ll be less novel art produced
-Bias and stereotypes - AI can both be used to create harmful images (e.g. hate image speech), and may reinforce harmful stereotypes
+1. Copyrights - the works they’re trained on are often copyrighted
+2. Death of art - as more art becomes AI-generated, there’ll be less novel art produced, which could create a self-destructive spiral
+3. Bias and stereotypes - AI can both be used to create harmful images (e.g. hate image speech), and may reinforce harmful stereotypes
 
 **Mitigating factors with AI art problems**
-Copyrights - this is tough. We’ll probably see a lot of change in the industry
-Death of art - not a huge deal. Novel work will still be incentivized, and we’ll see the rise of AI-assisted artists. Some artists will be displaced, others will learn new skills and thrive
-Bias - it’s up to communities to moderate content. No one would take back the written word because it can be used to distribute hate
+1. Copyrights - This is tough. We’ll probably see a lot of change in the industry, as artists restrict the use of their work from AI training. As a result, AI-generated art could become more expensive
+2. Death of art - I don't believe this will actually manifest, outside of the typical undulations of capitalism seen from the industrial revolution to the advent of the internet. Novel artwork will still be incentivized, and we’ll see the rise of AI-assisted artists. Some artists will be displaced, others will learn new skills and thrive
+3. Bias - it’s up to communities to moderate content. No one would take back the written word because it can be used to distribute hate
