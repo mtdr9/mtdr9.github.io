@@ -106,3 +106,9 @@ You don't need to be a manager to be a coach. Asking yourself the right question
      3. What's one more possibility?
      4. What else?
 2. Solve the problem
+    1. What resources do you need to help you decide?
+    2. What seems to be the main obstacle?
+    3. What action will you take?
+3. Integrate what you've learned
+    1. What do you think will be the end result?
+    2. What will you take away from this?
