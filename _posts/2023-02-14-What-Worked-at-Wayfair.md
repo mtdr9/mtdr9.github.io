@@ -6,9 +6,7 @@ image: /img/DALL·E 2023-02-14 18.04.41 - a dutch masters painting of gold coins
 tags: [management, analytics, professional, development]
 ---
 
-In four years as a search marketer, I built - with the help of my team of analysts and our partners in data science, ad tech, and storefront - $87 million of annualized, incremental revenue for Wayfair. This post isn't about any specific project, but rather the broad themes that allowed me to make the right bets and execute them quickly, as well as some of the lessons learned from bets that didn't pay off. Summing it all up, it came from empowering my team to work on the right things, and unblocking them effectively and proactively.
-
-And breaking it down a little, here are my three rules for success. Now, my uncle once recommended me a book of 11 rules for business, none of which are featured here, so your mileage may vary.
+In four years as a search marketer, I built - with the help of my team of analysts and our partners in data science, ad tech, and storefront - $87 million of annualized, incremental revenue for Wayfair. This post isn't about any specific project, but rather the broad themes that allowed me to make the right bets and execute them quickly, as well as some of the lessons learned from bets that didn't pay off. I've wrapped it up into three rules for success. Now, my uncle once recommended me a book of 11 rules for business, none of which are featured here, so your mileage may vary.
 
 1. Define what's important and what's not
 2. Manage your analysts to their skill level
@@ -18,7 +16,7 @@ And breaking it down a little, here are my three rules for success. Now, my uncl
 
 From a single 90 minute focus session to a 2-year roadmap, knowing what to focus on makes it so much more likely that by the quarterly performance slide, you'll have achieved some substantial, measureable results to write in. And it'll even let you manage upwards, telling your boss "I can get that done, but I think we should focus on A and B first, for reason X".
 
-My key insight here is that different prioritization techniques work best for different time horizons. Here are explanations of the 3 techniques I'll be discussing, courtesy of ChatGPT:
+My key insight here is that different prioritization techniques work best for different time horizons. Here are explanations of the 3 techniques I'll be discussing, courtesy of [ChatGPT](https://platform.openai.com/playground):
 
 RICE prioritization
 > The RICE prioritization framework is a popular tool used by many product managers and project managers. It stands for Risk, Impact, Confidence, and Effort, and it is used to prioritize tasks or projects based on four key factors.
@@ -48,3 +46,18 @@ To determine what to do for the next 6-12 months, I'd start with a brainstorming
 To determine what to do right now - today, or in my next 90-minute focus session - I'd look at my candidate projects' urgency vs. importance. Highly urgent AND highly urgent? You'd better finish this prioritization exercise quickly because that work won't do itself. Not important? Why is it on your list? Can it be eliminated, reduced, or snoozed? 
 
 Personally, I sometimes find it's hard to quickly say no to things with at least some value, especially if there's a stakeholder on the other side. For this reason I also keep a bucket on my to do list of "probably never doing". This lets me demarcate that I probably will never have time to prioritize something, without my to-do list falling prey to the [endowment effect](https://en.wikipedia.org/wiki/Endowment_effect). I can also keep it top of mind for a bit while I process whether it's really worth taking off the list. Just note that if something goes on the "probably never doing" list, it's usually smart to proactively get alignment with stakeholders!
+
+**2. Manage your analysts to their skill level**
+
+..........give analysts work that stretches them, but that they can achieve. So depending on how much they're streched, that's how much you need to coach them
+
+Foundational to succeeding as a manager is being able to "scope" large, ambiguous problems: clarifying their outputs, and breaking down the steps to get there into more concrete pieces. An example problem statement could be: "every customer who clicks on a product listing ad gets sent to the same landing page template. How do we change the landing page to create more revenue"? You can't just give that problem to a day 1 new hire out of school (i.e. a level 1 or L1): chances are, they'll spend a long time on it, and perhaps produce a recommendation, but with weak evidence that it's the highest effort, lowest value option possible.
+
+.......... instead you need to define the goal (grow revenue, or save costs and reinvest them), and create a project structure. 1. create a framework for what drives value on the page based on the different components of the page; 2. run analysis; 3. launch an [MVP](https://jexo.io/blog/ppm-glossary-what-is-mvp/) test to confirm one of the hypotheses; 4. if successful, scale it. Then assess: is it scoped enough for an analyst to run? A strong senior analyst could probably succeed here, with the right coach. And that brings us to situational leadership.
+
+> Situational leadership is a management style that recognizes and responds to the needs of different employees in different situations. It is a flexible approach that can be used to motivate, empower, and challenge employees to reach their goals. Based on the needs of each individual or team for a given task, situational leadership calls for one of four approaches:
+> 1. Directing is most appropriate when an employee is new to a task or organization. It involves the leader providing clear instructions and expectations and closely monitoring performance. The leader should outline step-by-step what they want the employee to do and provide guidance as needed.
+> 2. Coaching is an appropriate strategy when an employee has some experience but is still in the process of learning. It involves the leader providing guidance, feedback, and support while allowing the employee to take the lead. The leader should ask questions, provide feedback, and offer assistance when needed.
+> 3. Supporting is most appropriate when an employee is fairly experienced and able to work independently. It involves the leader providing encouragement and guidance while allowing the employee to take the lead. The leader should provide resources, challenge the employee to take on more responsibility, and offer assistance when needed.
+> 4. Delegating is an appropriate strategy when an employee is highly experienced and capable of handling the task without much guidance. It involves the leader assigning tasks to the employee and trusting that they will complete the task on their own. The leader should provide resources, set expectations, and offer support when needed.
+> Situational leadership also requires regular communication between the leader and team members. Leaders should use regular check-ins to assess progress and provide feedback. This will help ensure that everyone is on the same page and that any issues are addressed in a timely manner. By taking the time to understand the situation and the individuals involved, leaders can use situational leadership to create an environment where employees feel empowered and motivated.
