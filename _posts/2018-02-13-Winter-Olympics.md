@@ -3,10 +3,10 @@ layout: post
 title: Medals in the Winter Olympics
 subtitle: And Tableau charts in iframes
 image: /img/red_jacket_skier.jpeg
-tags: [winter, olympics, medals]
+tags: [data visualization, BI, tableau]
 ---
 
-The Olympics are here, and once again I find myself asking how the ski jumpers fly off 100m ramps without dying of fright, let alone impact. For me, summoning the courage to hit the "M" jumps is a victory for the weekend. I also wondered how my country stacks up against others in the field, and to answer that question, here's a historical view of each country's<sup>1</sup> olympic performance, with the top 20 shown initially.
+The Olympics are here, and once again I find myself stunned by the ski jumpers flying off 100m ramps before somersaulting through the air. For me, just hitting the "M" jumps is a victory for the weekend. I was curious how my country stacks up against others in the field, and to answer that question, I put together this historical view of each country's<sup>1</sup> olympic performance, with the top 20 shown initially.
 
 <style> .responsive-wrap iframe{ max-width: 100%;} </style>
 <iframe src="https://public.tableau.com/views/winter_olympic_medals_chart_CY/Dashboard1?:showVizHome=no&:embed=true" width="90%" height="500"></iframe>
@@ -22,7 +22,7 @@ Norway earned the 3rd most medals overall, and with a population of just 5 milli
 
 One surprise here for me was Denmark, which has only won 1 medal among a population of 5 million. Given that it's a Nordic country like its Scandinavian peers, I'd expected it to have a better streak, but it turns out that despite being relatively northern, Denmark stays above 0 Celsius for most of the year. Based on how much my friend in Copenhagen complains, I'd have thought it was consistently 40 below!
 
-The map really puts in perspective how few countries send top performers to the winter olympics. This is intuitive, as an olympic medalist from, say, Saudi Arabia would have been inexplicable. Although with the advent of [Ski Dubai](https://www.theplaymania.com/skidubai/ski-dubai-overview), perhaps it's not out of the question.
+The map really puts in perspective how few countries send top performers to the winter olympics. This is intuitive, as an olympic skier from, say, the United Arab Emirates would have been as absurd as a Jamaican bobsled team. Although with the advent of [Ski Dubai](https://www.theplaymania.com/skidubai/ski-dubai-overview), perhaps it's not out of the question.
 
 Notes:
 1. East Germany and West Germany are included with Germany, and Russia includes the Soviet Union and Team Unified.
