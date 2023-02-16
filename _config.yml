@@ -27,8 +27,6 @@ navbar-links:
   Companies:
     - Wayfair: "https://www.wayfair.com/"
     - Cambridge Associates: "https://www.cambridgeassociates.com/"
-    - Mariner Investment Group: "https://www.marinerinvestment.com/"
-    - Providential Partners: "http://www.providentialpartnersllc.com/"
   Homepage: "http://mattdorros.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
