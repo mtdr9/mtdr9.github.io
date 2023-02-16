@@ -411,11 +411,7 @@ print('number of words appearing once: ', words[words.freq==1].freq.count())
     number of words appearing once:  0
     
 
-That looks better - no more stop words or singletons, and a reasonable distribution of word frequency.
-
-Note that the graph is zoomed: some words appear more than 500 times.
-
-
+That looks great: no more stop words or singletons, and a reasonable distribution of word frequency.
 
 ```python
 cutoff_score = 8
@@ -801,5 +797,5 @@ In the above testing arrays, the second number indicates the probability our mod
 
 ## Next Steps
 
-In future iterations, I'd like to use principal component analysis to improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd like to test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability: despite having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly. Nonetheless, I'm curious to test how these other models perform. Finally, I'd like to implement word embedding, which will allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
+To improve this classifier, I'd first use principal component analysis to improve the model's performance by reducing the feature set, even though it would decrease interpretability. Second, I'd test some other classification algorithms, namely random forests and logistic regression. I started with naive Bayes because of its scalability, but despite the model having so many features (i.e. each individual word across all reviews), naive Bayes still works fairly quickly here, so there's room to eperiment with other options. Finally, I'd implement word embedding, which would allow the model to learn something about the meaning behind the words, rather than just analyzing individual words in a vacuum.
 
