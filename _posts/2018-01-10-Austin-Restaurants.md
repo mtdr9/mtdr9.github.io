@@ -3,7 +3,7 @@ layout: post
 title: Health Inspections in Austin Restaurants
 subtitle: As low as 36/100
 image: /img/food_mixing.jpeg
-tags: [food, safety, austin, texas]
+tags: [BI, data visualization, tableau]
 ---
 
 Every time I see people eating in a New York restaurant with a big orange "C" on the window I wonder: why is anyone eating there? Maybe those people were on their phones as they walked in. Or they've never seen _Kitchen Nightmares_.
