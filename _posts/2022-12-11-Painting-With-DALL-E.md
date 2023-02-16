@@ -2,7 +2,7 @@
 layout: post
 title: Painting With DALL·E
 image: /img/DALL·E 2022-12-14 17.48.37 - william the conquerer holding a boquet of flowers impressionism.png
-tags: [Dall-e, AI art, prompt engineering]
+tags: [DALL-E, AI art, prompt engineering]
 ---
 
 [DALL-E](https://openai.com/dall-e-2/) is spectacular. I've been using it to make everything from abstract inspiration for acrylic paintings to my favorite Super Smash Bros. characters reimagined as renaissance era royalty. But creating great AI art takes more than a button press: you also need a well-engineered prompt. In this article, I'll give my advice to getting better results, having created a few thousand AI-generated images. I'll also talk through some of problems with AI art and potential mitigating factors.
