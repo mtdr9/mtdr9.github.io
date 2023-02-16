@@ -3,7 +3,7 @@ layout: post
 title: What Worked at Wayfair
 subtitle: And how to build a money printing machine
 image: /img/DALL·E 2023-02-14 18.04.41 - a dutch masters painting of gold coins raining from the sky.png
-tags: [management, analytics, professional, development]
+tags: [management, analytics, professional development]
 ---
 
 In four years as a search marketer, I built - with the help of my team of analysts and our partners in data science, ad tech, and storefront - $87 million of annualized, incremental revenue for Wayfair. This post isn't about any specific project, but rather key frameworks that allowed me to make the right bets and execute them quickly. I've wrapped it up into three rules for success. Now, my uncle once recommended me a book of 11 rules for business, none of which are featured here, so your mileage may vary.
