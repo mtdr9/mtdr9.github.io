@@ -2,7 +2,7 @@
 layout: post
 title: Teaching a Machine to Read Pitchfork
 image: /img/pitchfork-classifier/pf-records.jpg
-tags: [pitchfork, review, classifier, machine, learning]
+tags: [web scraping, machine learning, classifiers, data visualization]
 ---
 
 This week I built a classifier that determines whether Pitchfork's album reviews qualify for "Best New Music" based on the review text. I rely pretty heavily on Pitchfork to find new music and better understand what I'm listening to, and analyzing the results of this classifier helped me investigate a few questions about how the site's reviews work:
