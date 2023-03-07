@@ -6,7 +6,7 @@ image: /img/DALL·E 2023-02-14 18.04.41 - a dutch masters painting of gold coins
 tags: [management, analytics, professional development]
 ---
 
-In four years as a search marketer, I built - in collaboration with my team of analysts and our partners in data science, ad tech, and storefront - $87 million of annualized, incremental revenue for Wayfair. Molto bene! Here are three frameworks that I used to pick bets and execute them quickly. Buon appetito.
+In four years as a search marketer, I built - in collaboration with my team of analysts and our partners in data science, ad tech, and storefront - $87 million of annualized, incremental revenue for Wayfair. Molto bene! Here are three frameworks that I used to pick bets and execute them quickly.
 
 1. Define what's important and what's not
 2. Manage your analysts to their skill level
