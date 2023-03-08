@@ -8,10 +8,6 @@ tags: [management, analytics, professional development]
 
 In four years as a search marketer, I built - in collaboration with my team of analysts and our partners in data science, ad tech, and storefront - $87 million of annualized, incremental revenue for Wayfair. Molto bene! Here are three frameworks that I used to pick bets and execute them quickly.
 
-1. Define what's important and what's not
-2. Manage your analysts to their skill level
-3. Be your own coach
-
 ## 1. Define what's important and what's not
 
 From a single 90 minute focus session to a 2-year roadmap, knowing what to focus on makes it so much more likely that by the quarterly performance slide, you'll have achieved some substantial, measureable results to write in. And it'll even let you manage upwards, telling your boss "I can get that done, but I think we should focus on A and B first, for reason X".
