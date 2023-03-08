@@ -12,7 +12,7 @@ In four years as a search marketer, I built - in collaboration with my team of a
 2. Manage your analysts to their skill level
 3. Be your own coach
 
-**1. Define what's important and what's not**
+## 1. Define what's important and what's not
 
 From a single 90 minute focus session to a 2-year roadmap, knowing what to focus on makes it so much more likely that by the quarterly performance slide, you'll have achieved some substantial, measureable results to write in. And it'll even let you manage upwards, telling your boss "I can get that done, but I think we should focus on A and B first, for reason X".
 
@@ -41,6 +41,8 @@ Urgency vs. Importance
 > 
 > To use the urgency vs. importance framework, plot each task or project on a matrix with urgency on the x-axis and importance on the y-axis. Tasks or projects that are both urgent and important should be prioritized, while tasks or projects that are not urgent or important should be deprioritized.
 
+#### Putting it all together
+
 To determine what to do for the next 6-12 months, I'd start with a brainstorming session, getting all of the ideas from the team on paper, without judging their quality. Then, I'd quickly sort ideas on a 2x2 matrix of **effort and value**. There's probably a lot of ideas, and I want to pluck the low hanging fruit - those high value, low effort ideas - as quickly as possible. 
 
 ![value vs. effort](/img/value_vs_effort.png "source: https://jexo.io/blog/backlog-prioritization-techniques-the-value-vs-effort/")
@@ -55,14 +57,16 @@ To determine what to do right now - today, or in my next 90-minute focus session
 
 As an aside, I sometimes find it's hard to quickly say no to things with at least some value, especially if there's a stakeholder on the other side. For this reason I also keep a bucket on my to do list of "probably never doing". This lets me demarcate that I probably will never have time to prioritize something, without my to-do list falling prey to the [endowment effect](https://en.wikipedia.org/wiki/Endowment_effect). I can also keep it top of mind for a bit while I process whether it's really worth taking off the list. Just note that if something goes on the "probably never doing" list, it's usually smart to proactively get alignment with stakeholders!
 
-**2. Manage your analysts to their skill level**
+## 2. Manage your analysts to their skill level
 
 Synopsis: give analysts work that's easy enough for them to achieve on time, but hard enough to force them to grow, with just enough support that they're never stuck for too long.
 
 Foundational to succeeding as a manager is being able to "scope" large, ambiguous problems: clarifying their outputs, and breaking down the steps to get there into more concrete pieces. An example problem statement could be: "every customer who clicks on a product listing ad gets sent to the same landing page template. How do we change the landing page to create more revenue"? You can't just give that problem to a day 1 new hire out of school (i.e. a level 1 or L1): chances are, they'll spend a long time on it, and perhaps produce a recommendation, but with weak evidence that it's the highest value and lowest effort option possible.
 
 Instead you need to define the goal (grow revenue, or save costs and reinvest them), and create a project structure, such as this:  
-1. Create a [MECE](https://en.wikipedia.org/wiki/MECE_principle) framework for what drives value on the page based on the different components of the page. As the first layer, consider the different components of the page: the advertised product image, its details and option selection, the add to cart button, the recommendations grid, the browse filters, the additional products carousel, and the page footer. As the second layer, consider how the components are created (e.g. for the recommendations grid, which products are eligible to be featured? How are they ordered? How is their size determined? Which details get featured for each product?)
+1. Create a [MECE](https://en.wikipedia.org/wiki/MECE_principle) framework for what drives value on the page based on the different components of the page. 
+    a. As the first layer, consider the different components of the page: the advertised product image, its details and option selection, the add to cart button, the recommendations grid, the browse filters, the additional products carousel, and the page footer. 
+    b. As the second layer, consider how the components are created (e.g. for the recommendations grid, which products are eligible to be featured? How are they ordered? How is their size determined? Which details get featured for each product?)
 2. Size the usage of each of these components (clicks, mouse-overs, and views) to determine where to focus our analysis
 3. Analyze each of those components to identify trends and generate hypotheses for how we could hit our goal by changing the components
 4. Launch an [MVP](https://jexo.io/blog/ppm-glossary-what-is-mvp/) test to confirm one of the hypotheses
@@ -100,7 +104,7 @@ Managing Jennifer required identifying which parts of a project required what le
 
 The main takeaway from each of these examples is that for every task and person working on it, a different level of leadership is required.
 
-**3. Be your own coach**
+## 3. Be your own coach
 
 Step 1: watch Ted Lasso  
 Step 2: get a job as a data analyst manager at a fortune 100 company  
