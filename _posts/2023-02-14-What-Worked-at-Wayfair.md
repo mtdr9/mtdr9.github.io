@@ -68,7 +68,7 @@ Instead you need to define the goal (grow revenue, or save costs and reinvest th
 4. Launch an [MVP](https://jexo.io/blog/ppm-glossary-what-is-mvp/) test to confirm one of the hypotheses
 5. If successful, scale it across e.g. product classes, geographies, brands, etc.
 
-Then assess: is it scoped enough for an analyst to run? Maybe: each of these steps still has a lot of ambiguity, especially 1 & 3. A strong senior analyst could succeed here, with the right coach. And that brings us to situational leadership. Situational leadership is a powerful tool to get the most out of your analysts without overly micro- or macromanaging. In a nutshell, it's giving employees just enough support so that they can make their own decisions of whatever complexity level they can handle. Take it away, chatbot:
+Then assess: is it scoped enough for an analyst to run? Maybe: each of these steps still has a lot of ambiguity, especially 1 & 3. A strong senior analyst could succeed here, with the right coach. And that brings us to the Hersey-Blanchard Situational Leadership model. Situational leadership is a powerful tool to get the most out of your analysts without overly micro- or macromanaging. In a nutshell, it's giving employees just enough support so that they can make their own decisions of whatever complexity level they can handle. Take it away, chatbot:
 
 > Situational leadership is a management style that recognizes and responds to the needs of different employees in different situations. It is a flexible approach that can be used to motivate, empower, and challenge employees to reach their goals. Based on the needs of each individual or team for a given task, situational leadership calls for one of four approaches:
 > 1. Directing is most appropriate when an employee is new to a task or organization. It involves the leader providing clear instructions and expectations and closely monitoring performance. The leader should outline step-by-step what they want the employee to do and provide guidance as needed.
@@ -77,6 +77,8 @@ Then assess: is it scoped enough for an analyst to run? Maybe: each of these ste
 > 4. Delegating is an appropriate strategy when an employee is highly experienced and capable of handling the task without much guidance. It involves the leader assigning tasks to the employee and trusting that they will complete the task on their own. The leader should provide resources, set expectations, and offer support when needed.  
 > 
 > Situational leadership also requires regular communication between the leader and team members. Leaders should use regular check-ins to assess progress and provide feedback. This will help ensure that everyone is on the same page and that any issues are addressed in a timely manner. By taking the time to understand the situation and the individuals involved, leaders can use situational leadership to create an environment where employees feel empowered and motivated.
+
+![situational leadership](/img/situational_leadership.png "source: https://rushabhdoshi.com/posts/2019-11-14-situational-leadership/")
 
 Let's look at two archetypes that I found were common, and the level of scoping and type of leadership they tended to need (at least at first; in theory, you should move from directing to delegating with each employee on each type of project at each level of scoping, until finally they're all Super Directors and you win capitalism together).
 
