@@ -61,8 +61,8 @@ Foundational to succeeding as a manager is being able to "scope" large, ambiguou
 
 Instead you need to define the goal (grow revenue, or save costs and reinvest them), and create a project structure, such as this:  
 1. Create a [MECE](https://en.wikipedia.org/wiki/MECE_principle) framework for what drives value on the page based on the different components of the page. 
-  a. As the first layer, consider the different components of the page: the advertised product image, its details and option selection, the add to cart button, the recommendations grid, the browse filters, the additional products carousel, and the page footer. 
-  b. As the second layer, consider how the components are created (e.g. for the recommendations grid, which products are eligible to be featured? How are they ordered? How is their size determined? Which details get featured for each product?)
+    1. As the first layer, consider the different components of the page: the advertised product image, its details and option selection, the add to cart button, the recommendations grid, the browse filters, the additional products carousel, and the page footer. 
+    2. As the second layer, consider how the components are created (e.g. for the recommendations grid, which products are eligible to be featured? How are they ordered? How is their size determined? Which details get featured for each product?)
 2. Size the usage of each of these components (clicks, mouse-overs, and views) to determine where to focus our analysis
 3. Analyze each of those components to identify trends and generate hypotheses for how we could hit our goal by changing the components
 4. Launch an [MVP](https://jexo.io/blog/ppm-glossary-what-is-mvp/) test to confirm one of the hypotheses
