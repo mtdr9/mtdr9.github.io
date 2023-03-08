@@ -122,6 +122,6 @@ You don't need to be a manager to be a coach. Asking yourself the right question
     1. What do you think will be the end result?
     2. What will you take away from this?
 
-For example, an analyst might come to me saying they're stuck on how to curate images for an imagery test. If I was short on time or there were a lot of questions to get through, perhaps I'd just give them the answer. But if we had the time, coaching them with these questions could allow them to solve the problem on their own, leaving me to only jump in if I saw them moving in the wrong direction. 
+For example, an analyst might come to me saying they're stuck on how to curate images for an imagery test. If I were short on time or there were a lot of questions to get through, perhaps I'd just give them the answer. But if we had the time, coaching them with these questions could allow them to solve the problem on their own; and their approach could be something I hadn't thought of.
 
 So, you've made it to the bottom of this article. What will you take away from this?
