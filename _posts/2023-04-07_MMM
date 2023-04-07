@@ -15,3 +15,169 @@ At Wayfair, we focused on MTA to get hyper granular results, which let us optimi
 
 ## How to run Media Mix Modeling (MMM)
 
+I'll be using an example dataset called 'df', a Python Pandas dataframe, which contains a couple hundred weeks of spend data for 3 channels, 'TV', 'radio', and 'newspaper', as well as # of conversions, called 'sales'. For this example, the ETL and data cleaning steps are already complete. The full code is available [here](https://github.com/mtdr9/public_projects/blob/289ef4b65582fb51b296075c55bd0aeeab4b9b68/Marketing%20Mix%20Model.ipynb) if you'd like to see the whole process.
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TV</th>
+      <th>radio</th>
+      <th>newspaper</th>
+      <th>sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>230.1</td>
+      <td>37.8</td>
+      <td>69.2</td>
+      <td>22.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>44.5</td>
+      <td>39.3</td>
+      <td>45.1</td>
+      <td>10.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>17.2</td>
+      <td>45.9</td>
+      <td>69.3</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>151.5</td>
+      <td>41.3</td>
+      <td>58.5</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>180.8</td>
+      <td>10.8</td>
+      <td>58.4</td>
+      <td>12.9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+### EDA
+
+Step one when working with a new dataset is always to understand what you're working with. I'll create a correlation matrix and pair plot to see how these features are related to each other.
+
+```python
+corr = df.corr()
+sns.heatmap(corr, xticklabels = corr.columns, yticklabels = corr.columns, annot = True, cmap = sns.light_palette(color='seagreen', as_cmap=True))
+```
+
+![png](http://mattdorros.com/img/MMM/corr_matrix.png)
+
+It looks like TV is most heavily correlated with sales, and could be our best bet for driving performance. Also, radio and newspaper tended to be used together more often than any other pair of channels, even though so far newspaper isn't very correlated with sales. Perhaps we'll be able to trim our newspaper usage.
+
+Next let's make a pair plot to show a) scatterplots of the relationship between different variables, and b) histograms along the diagonal that show the frequency of each value.
+
+```python
+# How simple is this? Python is amazing
+sns.pairplot(df)
+```
+
+![png](http://mattdorros.com/img/MMM/pairplot.png)
+
+There's a lot to take away from this. Starting on the right with channels' relationship with sales, it looks like TV has a clear relationship with sales, especially when considering no TV vs. some TV, while radio may have a looser relationship, and newspaper looks totally irrelevant given its random distribution. TV looks like it could have an exponential relationship, at least at first. Next, it looks like newspaper's data is skewed to the left, with most weeks spending <$50 but some weeks spending close to $100; we may want to correct that using a transformation like [Box Cox](https://scientistcafe.com/ids/resolve-skewness.html). Lastly, there's no obvious trend between the 3 independent variables.
+
+### Building a model
+
+Let's keep this really simple. The model building process looks like this:
+1. Identify models that fit the problem and the data at hand
+2. Build said models, and measure how accurately they can predict your test data
+3. Choose the model that performed the best and productionize it
+
+We're working with a regression problem with a continuous dependent variable and 3 independent variables, so our two main choices are a linear model or a tree-based model. Lets dive into which exact algorithms we can consider:
+* "Linear" models (called so since they're variants of linear regression, but some of them can handle non-linear data)
+    * Multiple linear regression - this model fits the scenario I described above, but our data isn't linear, so it's not likely to perform very well. However, if we adjust our data by e.g. taking the log of the dependent variable, we may be able to fit a line to it; this would be called a log-linear model and is likely worth trying since it's so easily interpretable if it works.
+    * Ridge & lasso regression - these models correct for collinear data. We saw in our EDA that most of the variables weren't very highly correlated, so they're not likely to help too much.
+    * Polynomial regression - now we're talking. This is linear regression but as applied to non-linear data. Sounds promising!
+* Tree-based models
+    * Decision tree - sure we could use one decision tree, but who ever uses one when the whole forest is available? And it's still environmentally friendly
+    * Random forest - these models are highly accurate and are not particularly prone to overfitting. Since our data complexity is low, the only major disadvantage is that they're not very interpretable
+    * Gradient boosting and XGBoost - these models can be even more accurate than random forests, although they're sensitive to outliers and can overfit. Our data doesn't have too many outliers though, except arguably on days where spend was close to 0, so this looks promising
+
+If I were getting paid to solve this problem, I'd test out log-linear regression, polynomial regression, random forests, gradient boosting, and XGBoost. But I'm not, so I tried log-linear regression and random forests, so that I'd get results from both the "linear" and tree-based models. Spoiler alert: random forests won, so let's focus on that. (Again the full analysis is available [here](https://github.com/mtdr9/public_projects/blob/main/Marketing%20Mix%20Model.ipynb)).
+
+```python
+# create our X and y variables from our df. y is simply the sales data
+X = df.iloc[:,0:3]
+y = df.iloc[:,3]
+
+# create a randomized split of training and testing data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.25, random_state=7)
+# create the random forest model and train it
+rf_model = RandomForestRegressor(random_state=7)
+rf_model.fit(X_train, y_train)
+# create predictions using our training data, then save them
+pred = rf_model.predict(X_test) 
+rf_results = pd.DataFrame({'actual': y_test, 'pred':pred})
+
+# evaluate our results with a plot of predictions vs. actuals. Sort by actual sales for readability
+rf_results.sort_values(inplace=True,by='actual')
+rf_results.reset_index(inplace=True, drop=True)
+plt.plot(rf_results.index.values, rf_results.actual.values, color='b', label='actual')
+plt.plot(rf_results.index.values, rf_results.pred.values, color='r', label='predicted')
+plt.xlabel('Observation #')
+plt.ylabel('Sales')
+plt.legend(loc='upper left')
+plt.show()
+```
+
+![png](http://mattdorros.com/img/MMM/rf_preds.png)
+
+The plot above shows our random forest's predictions for sales vs. the test data (which we created by splitting our data set into 25% test data and 75% training data). It looks pretty reasonable! Let's look at some aggregate measures of error.
+
+```python
+# random forest model error
+rf_actual = rf_results['actual'].values
+rf_pred = rf_results['pred'].values
+
+print(metrics.mean_absolute_error(rf_actual, rf_pred))
+print(metrics.mean_squared_error(rf_actual, rf_pred))
+# taking the square root gets us root mean squared error
+print(np.sqrt(metrics.mean_squared_error(rf_actual, rf_pred)))
+```
+
+MAE = 0.73  
+MSE = 1.03  
+RMSE = 1.02  
+
+This was a significant improvement over e.g. the log linear model error, which had a mean average error of 1.23, and a mean squared error of 2.95. This means that while the random forest had about half to two-thirds as much error on average (0.73 vs. 1.23) it had just one third as much error when using a metric that punishes outliers (1.03 vs. 2.95). [(Refresher on types of error here)](https://medium.com/analytics-vidhya/mae-mse-rmse-coefficient-of-determination-adjusted-r-squared-which-metric-is-better-cd0326a5697e).
+
+### Generating insights: how should we spend our marketing budget?
+
+Plan for this section:  
+1. talk about how now that we've got a working model, we can use it to find an optimal budget allocation
+2. describe the ideal solution: a multi-armed bandit
+3. describe the shortcut you took, maybe don't show the code, but show the two scatterplots with $300 and $360 spend. Then talk about how you'd need the value of a sale to figure out how much to spend, since right now the metrics aren't all in the same units. 
+4. But, to simply maximize sales, you would want to spend $360 in this way (describe mix)
+
+## Takeaways
+
+Optional section, maybe give some concluding remarks. I said it all upfront though, ideally you'll have both. You can use MMM for business planning. And to check your attribution. Maybe talk about how we used geographical lift studies at wayfair to do so.
